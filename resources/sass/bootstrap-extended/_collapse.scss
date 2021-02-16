@@ -1,0 +1,38 @@
+/*   Collapse and Accordion  */
+/*--------------------------*/
+.collapsible,
+.accordion {
+  // header
+  .card {
+    margin-bottom: .71rem ;
+    box-shadow: none;
+    border-radius: $border-radius !important;
+    // card-header when open class not exist
+    .card-header {
+      margin: 0;
+      border: solid 1px $collapse-header-border;
+      padding: 1rem 1.7rem;
+      border-radius: $border-radius !important;
+      font-size: 1.2rem;
+      font-family: $font-family-monospace;
+      cursor: pointer;
+      i{
+        margin-right: 1rem;
+      }
+    }
+    &.open {
+      /* open class for shadow and border-radius of card */
+      box-shadow: 0 3px 12px 0 rgba($black, 0.1) !important;
+      border-radius: $border-radius !important;
+      .card-header {
+        /* card-header when open class exist */
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom: 1px  solid $collapse-header-border !important;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+  }
+}

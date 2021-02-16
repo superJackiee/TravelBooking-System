@@ -1,0 +1,27 @@
+/*   Carousel css   */
+/*-----------------*/
+.carousel{
+  // carouse-indicator - arrow
+  .carousel-indicators {
+    li {
+      border-radius: 3px;
+      border-top: 0;
+      border-bottom: 0;
+    }
+  }
+  // carouse-inner
+  .carousel-inner{
+    border-radius: $border-radius;
+  }
+  // carousel caption text
+  .carousel-caption{
+    font-weight: $font-weight-bold;
+  }
+  // Carousel with Captions - Overlay Image - Heading Tag
+  .card-img-overlay{
+    h1, h2, h3, h4, h5, h6{
+      color: $white;
+    }
+  }
+}
+

@@ -1,0 +1,79 @@
+// ===============================================================================================
+// File Name: list-group.scss
+// Description: Contain list item, list group related extended SCSS.
+// ----------------------------------------------------------------------------------------------
+// Item Name: Frest HTML Admin Template
+// Version: 1.0
+// Author: PIXINVENT
+// Author URL: http://www.themeforest.net/user/pixinvent
+//================================================================================================
+
+/*   Inline list style   */
+/*----------------------*/
+ul.list-inline {
+  li {
+    display: inline-block;
+  }
+  &.list-inline-pipe {
+    >li+li:before {
+      content: ' | ';
+      padding-right: 2px;
+    }
+  }
+}
+/* bootstrap list group */
+/*---------------------*/
+.list-group {
+  .list-group-item {
+    &.active {
+      i{
+        &.badge-circle{
+          background-color: $white;
+        }
+      }
+      &:hover{
+        background-color: $primary;
+      }
+      h1,h2,h3,h4,h5,h6 {
+        color: $white;
+      }
+    }
+    i {
+      /* List Group Icon css */
+      font-size: 1.4rem;
+    }
+  }
+  //Removed list group button focus outline
+  button {
+    &.list-group-item {
+      &:focus {
+        outline: 0px;
+      }
+    }
+  }
+
+  // List group active psuedo element action
+  .list-group-item-action {
+    &:hover {
+      background-color: $list-group-hover-bg;
+    }
+  }
+}
+
+/* Inline users list - Use in Widget page */
+/*---------------------------------------*/
+.users-list{
+  li+li {
+      margin-left: -.785rem;
+  }
+  li{
+    img{
+      border: 2px solid $white;
+    }
+    .badge{
+      border: 2px solid $white;
+      border-radius: 50%;
+      padding: 0.4rem 0.4rem;
+    }
+  }
+}

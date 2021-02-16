@@ -1,0 +1,25 @@
+/*  Popovers css */
+/*--------------*/
+.popover {
+  z-index: 10;
+  box-shadow: $popover-box-shadow;  // it is not worked through mixins so make css for it.
+
+  .popover-header {
+    /* popover header color and border-radius */
+    border-bottom: 1px solid $border-color;
+    font-weight: normal;
+  }
+  .popover-body{
+    color: $body-color;
+  }
+  // arrow position for popover top
+  &.bs-popover-top > .arrow::after{
+    bottom: 2px;
+  }
+  // arrow position for popover left
+  &.bs-popover-left > .arrow::after{
+    right: 2px;
+  }
+}
+
+

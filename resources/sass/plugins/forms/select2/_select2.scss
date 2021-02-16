@@ -1,0 +1,241 @@
+// ================================================================================================
+//     File Name: select2.scss
+//     Description: Select2.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/* Select2 Css */
+/* ----------- */
+
+.select2-container--classic {
+  .select2-selection--single {
+    min-height: 40px !important;
+  }
+}
+
+// Select2 Arrow Icon
+.select2-container--classic {
+  .select2-selection--single {
+    .select2-selection__arrow {
+      b {
+        margin-left: -4px !important;
+        border-color: $gray-200 !important;
+      }
+    }
+  }
+}
+.select2-container--classic,
+.select2-container--default {
+  &:focus {
+    outline: none;
+  }
+
+  // Select2 Single
+  .select2-selection--single {
+    min-height: 38px;
+    padding: 5px;
+    border: 1px solid $input-border-color;
+    &:focus {
+      border-color: $primary !important;
+      box-shadow: $input-focus-box-shadow !important;
+    }
+
+    // Select2 With Icons
+    .select2-selection__rendered {
+      i {
+        margin-right: 0.5rem;
+        position: relative;
+        top: 2px;
+      }
+    }
+    // Dropdown Arrow Height
+    .select2-selection__arrow {
+      min-height: 38px;
+      b {
+        width: 6px;
+        height: 6px;
+        margin-left: -10px;
+        margin-top: -5px;
+        border-width: 0 2px 2px 0;
+        border-color: $select-arrow-border;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  // When Select Container Open
+  &.select2-container--open {
+    .select2-selection--single {
+      border-color: $primary !important;
+      outline: 0;
+      .select2-selection__arrow {
+        b {
+          border-width: 2px 0 0 2px;
+          border-color: $select-arrow-border transparent transparent
+            $select-arrow-border;
+          margin-top: -2px;
+        }
+      }
+      &.select-lg {
+        .select2-selection__arrow {
+          b {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // Select Container Focus
+  &.select2-container--focus {
+    outline: 0;
+    .select2-selection--multiple {
+      border-color: $primary !important;
+      outline: 0;
+    }
+  }
+
+  // Multiple Select2
+  .select2-selection--multiple {
+    min-height: 38px !important;
+    border: 1px solid $input-border-color;
+    &:focus {
+      outline: 0;
+      border-color: $primary !important;
+      box-shadow: $input-focus-box-shadow !important;
+    }
+    .select2-selection__choice__remove {
+      margin-right: 0;
+    }
+    // Selected Items Bg Color For Multiple Selection
+    .select2-selection__choice {
+      background-color: $primary !important;
+      border-color: transparent !important;
+      color: $white !important;
+      padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+    }
+    // Font Size For Selected Options
+    .select2-selection__rendered {
+      li {
+        .select2-search__field {
+          margin-top: 6px;
+          padding-left: 8px;
+        }
+      }
+    }
+    .select2-selection__choice__remove {
+      color: $white !important;
+      float: right;
+      margin-left: 0.3rem;
+    }
+    // Select Dropdown Menu With Icons
+    i {
+      position: relative;
+      top: 1px;
+      margin-right: 0.5rem;
+      padding-left: 1px;
+    }
+
+    // Color Options For Multiple Selected Items
+    &[class*="bg-"] {
+      .select2-selection__choice {
+        background-color: rgba($black, 0.15) !important;
+        border-color: rgba($black, 0.2) !important;
+      }
+    }
+  }
+  .select2-results__options {
+    .select2-results__option {
+      i {
+        margin-right: 0.5rem;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+  //Loading Remote Data Image Size
+  .select2-result-repository__avatar {
+    img {
+      width: 50px;
+    }
+  }
+
+  // Select Sizing
+
+  // Large Single Select
+  .select-lg {
+    min-height: $input-height-lg !important;
+    font-size: $font-size-lg;
+    margin-bottom: 0 !important;
+    padding: 0.6rem 0.7rem;
+    &.select2-selection--single {
+      .select2-selection__rendered {
+        padding-top: $input-btn-padding-y-lg - 0.9;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      // Select Arrow Height
+      .select2-selection__arrow {
+        min-height: $input-height-lg !important;
+      }
+    }
+
+    // Large Multiple Select
+    &.select2-selection--multiple {
+      padding: 0 0.2rem;
+      .select2-selection__rendered {
+        padding-top: 0 !important;
+        li {
+          font-size: $font-size-lg;
+        }
+        .select2-selection__choice {
+          margin-top: 6.5px;
+        }
+      }
+    }
+  }
+  // Small Single Select
+  .select-sm {
+    min-height: $input-height-sm !important;
+    padding: 0 $input-padding-y-xs;
+    font-size: $font-size-xs;
+    margin-bottom: 0 !important;
+    line-height: $line-height-xs;
+    // Single
+    &.select2-selection--single {
+      .select2-selection__arrow {
+        top: -0.3rem !important;
+      }
+    }
+
+    // Small Multiple Select
+    &.select2-selection--multiple {
+      line-height: $line-height-xs - 0.3;
+      .select2-selection__rendered {
+        padding: 3px;
+        li {
+          font-size: $font-size-xs;
+          margin-top: 2px;
+        }
+      }
+      .select2-selection__choice {
+        padding: 0.2rem 0.3rem;
+      }
+      .select2-search--inline .select2-search__field {
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+// Select2 Form Control Focus Color
+.select2 {
+  .form-control {
+    &:focus {
+      border-color: $primary !important;
+    }
+  }
+}

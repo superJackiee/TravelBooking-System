@@ -1,0 +1,130 @@
+// ===============================================================================================
+//  File Name: page-knowledge-base.scss
+//  Description: Knowledge Base Page Content SCSS
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+@import "../core/variables/components-variables";
+
+/* knowledge base page css */
+/*-------------------------*/
+/* kb search button positioning */
+.kb-header{
+  button{
+        right: 7px;
+        top: 6px;
+    }
+}
+
+// search input placeholder resizing
+.kb-search{
+    input{
+        &::placeholder{
+            font-size: 1rem;
+        }
+    }
+}
+
+// knowledge base categories & knowledge base question left section effect
+.kb-categories, .kb-question{
+    .kb-effect{
+        transition: all .4s ease;
+        &:hover{
+            color: $primary !important;
+            margin-left: .5rem;
+        }
+    }
+}
+
+.kb-ellipsis{
+  /* multiline text with ellipsis */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Media query for image sizing for large screen
+@media only screen and (min-width: 1024px){
+    .kb-header{
+        padding: 5rem 0 !important;
+    }
+}
+
+// Media query for medium screen
+@media only screen and (max-width: 767px){
+    // search box width
+    .kb-search{
+        .kb-search-width{
+        width: 100% !important;
+        }
+    }
+    .kb-sidebar{
+    /* knowledge-base-categories & knowledge-base-question sidebar */
+        box-shadow: -8px 12px 18px 0 rgba(25,42,70,0.8);
+        height: 100%;
+        width: 260px;
+        background-color: $white;
+        position: fixed;
+        transform: translateX(-105%);
+        transition: all .3s ease;
+        z-index: 12;
+        left: 0rem;
+        top: 4.57rem;
+        padding: 1.2rem 0 0 1.1rem;
+            &.show{
+            transform: translateX(0%);
+            }
+        .kb-close-icon{
+          /* sidebar close icon */
+            position: absolute;
+            top: 12px;
+            right: 5px;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .kb-overlay{
+    /* knowledge base categories & knowledge base question overlay dark effect */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 11;
+        visibility: hidden;
+        &.show{
+            visibility: visible;
+            transition: all .3s ease;
+            background-color: rgba($black, 0.2);
+        }
+    }
+}
+
+// Media query for small screen
+@media only screen and (max-width: 576px){
+    // kb-title font sizing
+    .kb-title{
+        font-size: $h3-font-size;
+    }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+/* IE Specific CSS */
+    .kb-ellipsis{
+        max-height: 67.5px;
+    }
+}

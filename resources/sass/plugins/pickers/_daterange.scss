@@ -1,0 +1,52 @@
+// ================================================================================================
+//     File Name: daterange.scss
+//     Description: Daterange picker.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core Variables And Mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+@import "../../bootstrap-extended/mixins";
+
+// Core Variables And Mixins Overrides
+@import "../../core/variables/variables";
+@import "../../bootstrap/variables";
+
+// Overrides User Variable
+@import "../../core/variables/components-variables";
+
+/* Daterange Css */
+/* ------------- */
+
+// Bootstrap Date Range Picker
+.daterangepicker {
+  td.active,
+  td.active:hover {
+    background-color: $primary;
+  }
+  // Selected Date Range Bg Color
+  td.in-range {
+    background-color: rgba($primary, 0.2);
+    color: $black;
+  }
+  // Active Bg Color For Predefined Ranges Section
+  .ranges {
+    li {
+      &.active {
+        background-color: $primary;
+      }
+    }
+  }
+}
+// Inline Daterangepicker Container
+.daterangepicker-container .daterangepicker {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  float: left;
+}

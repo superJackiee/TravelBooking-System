@@ -1,0 +1,35 @@
+// Class names to be used when generating CSS
+$ct-class-chart: ct-chart;
+$ct-class-chart-line: ct-chart-line;
+$ct-class-chart-bar: ct-chart-bar;
+$ct-class-horizontal-bars: ct-horizontal-bars;
+$ct-class-chart-pie: ct-chart-pie;
+$ct-class-chart-donut: ct-chart-donut;
+$ct-class-label: ct-label;
+$ct-class-series: ct-series;
+$ct-class-line: ct-line;
+$ct-class-point: ct-point;
+$ct-class-area: ct-area;
+$ct-class-bar: ct-bar;
+$ct-class-slice-pie: ct-slice-pie;
+$ct-class-slice-donut: ct-slice-donut;
+$ct-class-slice-donut-solid: ct-slice-donut-solid;
+$ct-class-grid: ct-grid;
+$ct-class-grid-background: ct-grid-background;
+$ct-class-vertical: ct-vertical;
+$ct-class-horizontal: ct-horizontal;
+$ct-class-start: ct-start;
+$ct-class-end: ct-end;
+
+// Text styles for labels
+$ct-text-color: rgba($black, 0.4);
+$ct-text-size: 0.75rem;
+// If set to true it will include the default classes and generate CSS output. If you're planning to use the mixins you
+// should set this property to false
+$ct-include-classes: true;
+// If this is set to true the CSS will contain colored series. You can extend or change the color with the
+// properties below
+$ct-include-colored-series: $ct-include-classes;
+// Series names and colors. This can be extended or customized as desired. Just add more series and colors.
+$ct-series-names: (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o) ;
+

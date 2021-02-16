@@ -1,0 +1,237 @@
+/*     Dropdown css   */
+/*-------------------*/
+
+.show{
+  >.dropdown-menu {
+    /*dropdown wrapper has show class dropdown menu display block */
+    display: block;
+  }
+}
+/*  dropdown toggle css */
+/*---------------------*/
+  .btn.dropdown-toggle.dropdown-toggle-split {
+    padding: 0 $dropdown-btn-split-padding-x;
+    border-left-color: rgba($white, 0.2) !important;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /*   dropdown menu  */
+  /*-----------------*/
+  .dropdown-menu {
+    box-shadow: -7px 8px 16px 0px rgba(55,70,95,0.2);
+    &::before {
+      border-top: 1px solid $dropdown-border-color;
+      border-left: 1px solid $dropdown-border-color;
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 1.2rem;
+      width: .75rem;
+      height: .75rem;
+      display: block;
+      background: $white;
+      transform: rotate(45deg) translate(-7px);
+      z-index: 10;
+      box-sizing: border-box;
+    }
+    .dropdown-header{
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+    }
+    .dropdown-item{
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      // Dropdown Items with Emojis
+      .dropdown-item-emoji{
+        font-size: 1rem;
+        margin-right: 0.5rem;
+      }
+      &:active, &.active{
+        // icon color on active
+        i{
+          color: $white;
+        }
+      }
+    }
+
+    &.dropdown-menu-right {
+      &::before {
+        right: .6rem;
+        left: auto;
+      }
+
+    }
+    i {
+      color: $secondary;
+    }
+  }
+
+ // same padding for diffrent directions
+.dropdown,
+.dropup,
+.dropright,
+.dropleft{
+  .dropdown-toggle {
+    &::after {
+      border: none !important;
+      font-family: 'boxicons';
+      content: "\ea17" !important;
+      position: relative;
+      top: 1px;
+      right: 0px;
+      left: .714rem;
+      padding: 0;
+      margin: 0;
+      vertical-align: 0;
+    }
+
+    &.dropdown-toggle-split {
+      &:after {
+        left: 0;
+      }
+    }
+
+
+    // hide default arrow to show custom icon DD
+    &.nav-hide-arrow {
+      &::after {
+        display: none;
+      }
+    }
+
+    // Prevent the focus on the dropdown toggle when closing dropdowns
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+/*  DropUp css  */
+/*-------------*/
+.dropup {
+  .dropdown-toggle {
+    // changed icon dropup caret
+    &::after {
+      content: "\ea24" !important;
+      vertical-align: 0.05rem;
+      top: 3px;
+    }
+  }
+  .dropdown-menu {
+    &::before {
+      bottom: -.714rem;
+      left: 1.214rem;
+      top: auto;
+      border-bottom: 1px solid $dropdown-border-color;
+      border-right: 1px solid $dropdown-border-color;
+    }
+    &.dropdown-menu-right{
+      &::before{
+        left: auto;
+        right: .714rem;
+      }
+    }
+    // border-top/left "0" for drop-up menu
+    &[x-placement^="top-start"],&[x-placement^="top-end"], &[x-placement^="bottom-start"]{
+      &::before {
+        border-top: 0;
+        border-left: 0;
+      }
+    }
+  }
+  .dropdown-submenu {
+    .dropdown-menu {
+      bottom: auto;
+      top: 0;
+    }
+  }
+}
+
+
+/*   DropLeft  */
+/*------------*/
+.dropleft {
+  .dropdown-toggle {
+    // changed icon dropup caret
+    &::before {
+      border: none !important;
+      font-family: 'boxicons';
+      content: "\ea1a" !important;
+    }
+  }
+  .dropdown-menu {
+    &::before {
+      content: '';
+      top: 1.285rem;
+      right: 0;
+      left: auto;
+      transform: rotate(130deg) translate(-8px);
+      border-top: 1px solid $dropdown-border-color;
+      border-left: 1px solid $dropdown-border-color;
+    }
+  }
+}
+
+
+/*   DropRight  */
+/*-------------*/
+.dropright {
+  .dropdown-toggle {
+    // changed icon dropup caret
+    &::after {
+      border: none !important;
+      font-family: 'boxicons';
+      content: "\ea1d" !important;
+    }
+  }
+  .dropdown-menu {
+    &::before {
+      top: 1.285rem;
+      left: -0.9rem;
+      transform: rotate(140deg) translate(-9px);
+      border-bottom: 1px solid $dropdown-border-color;
+      border-right: 1px solid $dropdown-border-color;
+    }
+    // border-top/left "0" for dropright menu
+    &[x-placement^="right-start"]{
+      &::before {
+        border-top: 0;
+        border-left: 0;
+      }
+    }
+  }
+}
+
+/*   Dropdown Icon  */
+/*-----------------*/
+.dropdown,
+.dropup {
+  &.dropdown-icon-wrapper {
+    .dropdown-toggle {
+      &:after {
+        display: none;
+      }
+    }
+    .dropdown-menu {
+      min-width: auto;
+      .dropdown-item {
+        cursor: pointer;
+        i {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+/* Dropdown inside white button */
+.btn.btn-white ~ .dropdown-menu {
+  .dropdown-item:not(.acitve):hover{
+    color: $body-color !important;
+  }
+  .dropdown-item.active{
+    color: $body-color;
+  }
+}

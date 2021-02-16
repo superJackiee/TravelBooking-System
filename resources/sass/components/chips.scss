@@ -1,0 +1,91 @@
+// =========================================================================================
+// 	File Name: chips.scss
+// 	Description: Chips css.
+// 	----------------------------------------------------------------------------------------
+// 	Item Name: Frest HTML Admin Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ==========================================================================================
+
+/* Chips Css */
+/* --------- */
+
+// Chip Styles
+.chip {
+  background-color: $chip-bg-color;
+  font-size: $chip-font-size;
+  border-radius: $chip-border-radius;
+  display: inline-flex;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  justify-content: center;
+
+  // Chip Body Customization
+  .chip-body {
+    color: rgba($black, 0.7);
+    display: flex;
+    justify-content: space-between;
+    min-height: $chip-min-height;
+    min-width: $chip-min-width;
+    .avatar {
+      background-color: $chip-avatar-bg;
+      display: flex;
+      width: $avatar-size-sm;
+      height: $avatar-size-sm;
+      margin: 2px 0;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      transform: translate(-8px);
+      .avatar-content {
+        top: 0;
+      }
+
+      // Chip Image
+      img {
+        border-radius: 50%;
+        height: $avatar-size-sm;
+        width: $avatar-size-sm;
+      }
+    }
+    // Chip Text
+    .chip-text {
+      vertical-align: middle;
+      align-self: center;
+    }
+    // Icon Font Size
+    i {
+      font-size: 1rem;
+    }
+    // Chip Closeable
+    .chip-closeable {
+      min-height: $chip-closeable-min-height;
+      min-width: $chip-closeable-min-width;
+      margin: 0 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      border-radius: 50%;
+      background: rgba($black, 0.15);
+      color: $white;
+      transform: translate(10px);
+      cursor: pointer;
+    }
+  }
+}
+
+// Ie Specific Css
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .chip {
+    .chip-closeable {
+      i {
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+}

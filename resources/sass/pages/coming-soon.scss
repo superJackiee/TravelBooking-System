@@ -1,0 +1,58 @@
+// ================================================================================================
+//     File Name: coming-soon.scss
+//     Description: Coming Soon pages custom scss
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* coming soon page css */
+/*----------------------*/
+// Notify button position
+.cs-btn-notify{
+    right: 7px;
+    top: 6px;
+}
+
+.coming-soon{
+/* For counter - font size and color css */
+    font-size: 3rem;
+    color: $gray-900;
+}
+
+// bouncy effect for right side image
+.cs-effect{
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    &.cs-effect-bounce{
+        animation-name: cs-effect-bounce;
+        animation-timing-function: linear;
+    }
+    @keyframes cs-effect-bounce {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(30px); }
+        100% { transform: translateY(0); }
+    }
+}
+// Media query for small screen
+@media only screen and (max-width: 575px){
+    .coming-soon{
+        flex-wrap: wrap;
+        .clockCard{
+            padding: 0 .5rem !important;
+        }
+    }
+}

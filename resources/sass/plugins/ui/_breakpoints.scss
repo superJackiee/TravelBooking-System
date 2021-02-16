@@ -1,0 +1,78 @@
+// ================================================================================================
+//     File Name: breakpoints.scss
+//     Description: Breakpoints pages custom css.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/* Breakpoints Css */
+/* ------------- */
+
+// Config
+$debug: false;
+
+// Declare Breakpoints
+$usn-x-small: 0px;
+$usn-small: 544px;
+$usn-medium: 768px;
+$usn-large: 992px;
+$usn-x-large: 1200px;
+
+// Create Sass List To Pass Media Query Data
+// If A Breakpoint Name Changes, Remember To
+// Update It In The List Below As Well
+$mq-sync: xs $usn-x-small, sm $usn-small, md $usn-medium, lg $usn-large,
+  xl $usn-x-large;
+
+// Build Each Media Query For Js Ingestion
+@each $mq in $mq-sync {
+  @media screen and (min-width: nth($mq, 2)) {
+    head {
+      font-family: "#{nth($mq, 1)} #{nth($mq, 2)}";
+    }
+    body:after {
+      content: "#{nth($mq, 1)} - min-width: #{nth($mq, 2)}";
+    }
+  }
+}
+
+head {
+  // Set Clear On Head To Show Unison Is Set Up Correctly
+  clear: both;
+  // Store Hash Of All Breakpoints
+  title {
+    font-family: "#{$mq-sync}";
+  }
+}
+
+// Debug Styles To See Breakpoint Info
+body:after {
+  display: none;
+}
+
+@if $debug == true {
+  body:after {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+    background-color: rgba($black, 0.8);
+    text-align: center;
+    color: $white;
+    padding: 10px;
+    z-index: 1000;
+    font-size: 12px;
+    font-family: sans-serif;
+  }
+}
+
+// Hide Elements For Conditional Loading
+// Only Used For Responsive Comments Plugin
+*[data-usn-if] {
+  display: none;
+}

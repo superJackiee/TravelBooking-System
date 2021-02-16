@@ -1,0 +1,108 @@
+// =========================================================================================
+// 	File Name: widget-chat.scss
+// 	Description: widget chat global scss
+// 	----------------------------------------------------------------------------------------
+// 	Item Name: Frest HTML Admin Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ==========================================================================================
+
+/* widget chat */
+/* ----------- */
+
+.widget-chat {
+  .widget-chat-container {
+    position: relative;
+    height: 420px;
+    text-align: center;
+    padding: 1.4rem;
+  }
+  .chat-content {
+    .chat-body {
+      overflow: hidden !important;
+      margin: 0.67rem 0 0 0 !important;
+      .chat-message {
+        position: relative !important;
+        float: right !important;
+        text-align: right !important;
+        padding: 0.75rem 1rem !important;
+        margin: 0.2rem 0.2rem 1.8rem 0 !important;
+        max-width: calc(100% - 5rem) !important;
+        clear: both !important;
+        word-break: break-word !important;
+        color: $white !important;
+        background: $primary !important;
+        border-radius: $border-radius !important;
+        box-shadow: 0 2px 4px 0 rgba($primary, 0.6) !important;
+        p {
+          margin-bottom: 0 !important;
+        }
+        // chat time positioning & typography
+        .chat-time {
+          position: absolute !important;
+          bottom: -20px !important;
+          right: 0px !important;
+          color: $text-muted !important;
+          font-size: 0.8rem !important;
+          white-space: nowrap !important;
+        }
+      }
+    }
+    // chat area left
+    .chat-left {
+      .chat-message {
+        text-align: left !important;
+        float: left !important;
+        margin: 0.2rem 0 1.8rem 0.2rem !important;
+        color: $body-color !important;
+        background-color: $app-chat-message-bg !important;
+        box-shadow: 0 2px 6px 0 rgba($black, 0.3) !important;
+      }
+    }
+  }
+  // widget chat demo wrapper
+  &.widget-chat-demo {
+    position: fixed;
+    z-index: 1031;
+    bottom: 11.5%;
+    right: 80px;
+    width: 350px;
+    // chats area css
+    .widget-chat-container {
+      height: 27rem;
+    }
+    .chat-content {
+      .chat-message {
+        max-width: calc(100% - 3rem);
+      }
+    }
+    .card {
+      box-shadow: 0px 0px 22px 0 rgba(25, 42, 70, 0.25);
+    }
+  }
+}
+// widget chat demo footer button positioning
+.chat-demo-button {
+  position: fixed;
+  bottom: 5%;
+  right: 80px;
+  z-index: 1031;
+  i {
+    top: 0;
+  }
+}
+
+// Media query for extra small screen
+@include media-breakpoint-down(xs) {
+  .widget-chat {
+    &.widget-chat-demo {
+      right: 0;
+      padding: 0 1.2rem;
+      width: 100%;
+      .widget-chat-container {
+        height: 21rem;
+      }
+    }
+  }
+}

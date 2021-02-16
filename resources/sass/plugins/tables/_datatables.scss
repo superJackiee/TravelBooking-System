@@ -1,0 +1,91 @@
+// ================================================================================================
+//     File Name: datatables.scss
+//     Description: Datatables pages custom css.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/* Datatables Css */
+/* ------------- */
+
+.table.dataTable {
+  // Remove Default Margin
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  border-collapse: collapse !important; // This Css Is Used To Override Datatable Th Css
+  border-spacing: 2px; //Override Line Height
+  thead {
+    .sorting,
+    .sorting_asc,
+    .sorting_desc {
+      &:before,
+      &:after {
+        top: 8px;
+        right: 3px;
+      }
+    }
+    .sorting,
+    .sorting_asc,
+    .sorting_desc,
+    .sorting_desc_disabled {
+      &:before,
+      &:after {
+        font-family: "boxicons";
+        color: $gray-600;
+      }
+      &:before {
+        content: "\ea24";
+        font-size: 1.1rem;
+      }
+      &:after {
+        content: "\ea17";
+        padding-top: 1em;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// Datatable Search, Labels
+div.dataTables_wrapper {
+  // Data Table Search, Labels
+  div.dataTables_filter,
+  div.dataTables_length {
+    margin: 1rem 0;
+    select {
+      background-position: calc(100% - 4px) 9px, calc(100% - 20px) 13px, 100% 0;
+      padding: 0 0.8rem;
+    }
+  }
+  // Pagination
+  div.dataTables_paginate {
+    ul.pagination {
+      margin-top: 1rem;
+    }
+  }
+}
+// Media Query For Small Screen
+@media only screen and (max-width: 768px) {
+  div.dataTables_wrapper {
+    div.dataTables_paginate {
+      ul.pagination {
+        justify-content: center;
+      }
+    }
+  }
+}
+// Media Query For Extra Small Screen
+@media only screen and (max-width: 576px) {
+  div.dataTables_wrapper {
+    div.dataTables_paginate,
+    div.dataTables_info {
+      text-align: left;
+      ul.pagination {
+        justify-content: left;
+      }
+    }
+  }
+}

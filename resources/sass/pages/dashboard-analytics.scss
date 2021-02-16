@@ -1,0 +1,149 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* dashboard analytics page css */
+/*------------------------------*/
+
+// Donut Charts in center
+#donut-chart{
+  .apexcharts-canvas{
+    margin : 0 auto;
+  }
+}
+
+// Light Icon color For Box Icons
+.icon-light{
+  color: #b3c0ce;
+}
+// dropdown button color when show on wrapper
+.show > .btn-outline-secondary.dropdown-toggle{
+  color: $white !important;
+}
+// Activity Card Content
+.activity-content{
+  margin-bottom: 2.13rem;
+}
+
+// Sales Card
+.sales-info-content{
+  h1, h2, h3, h4, h5, h6{
+    line-height: 0.7;
+  }
+}
+
+// Conversion Card Chart
+#bar-negative-chart{
+  .apexcharts-series{
+    &[seriesName="RetainedxClients"] {
+      transform: scaleY(1.08);
+    }
+  }
+}
+
+
+// Todo - Task List
+.widget-todo{
+  .dropdown{
+    .dropdown-toggle{
+      &:after{
+      /* widget todo-task list - dropdown arrow position */
+        left: 0.1rem;
+        color: $select-arrow-border;
+      }
+    }
+  }
+  // todo-list-completed
+  .widget-todo-list-wrapper{
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    .widget-todo-item{
+      padding: 0.5rem 1.5rem 0.1rem 0.5rem;
+      .widget-todo-title-area{
+        i{
+          visibility: hidden;
+          color: $gray-200;
+        }
+      }
+      &:hover{
+        background-color: $hover-color;
+        .widget-todo-title-area{
+          i{
+            visibility: visible;
+          }
+        }
+      }
+      &.completed {
+        .widget-todo-title{
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+// timeline wrapper
+.widget-timeline{
+  .timeline-text{
+    color: $text-muted;
+    font-size: 13px;
+  }
+  .timeline-content{
+    color: #304156;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: transparent !important;
+    padding-left: 0 !important;
+  }
+  .timeline-time{
+    font-size: 0.8rem !important;
+  }
+}
+// todo card responsive in specific screen
+@media screen and (max-width:600px){
+  .widget-todo-list-wrapper{
+    .widget-todo-title-wrapper{
+      flex-direction: column;
+      .widget-todo-title-area{
+      margin-right: auto;
+      }
+      .widget-todo-item-action{
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:1280px) and (min-width:960px){
+  .activity-card,
+  .profit-report-card,
+  .sales-card,
+  .growth-card{
+    flex: 0 0 50%;
+    min-width: 50%;
+  }
+}
+@media screen and (max-width:1320px) and (min-width:1200px){
+  .dashboard-referral-impression{
+    .donut-chart-wrapper{
+      ul{
+        li{
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+  #primary-line-chart,
+  #warning-line-chart{
+    display: none;
+  }
+}

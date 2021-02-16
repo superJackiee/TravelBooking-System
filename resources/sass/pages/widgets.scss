@@ -1,0 +1,304 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* Widgets Advance */
+/*-----------------*/
+// Todo - Task List
+// ------------------
+.widget-todo {
+  // Dropdown arrow position
+  .dropdown {
+    .dropdown-toggle {
+      &:after {
+        left: 0.1rem;
+        color: $gray-200;
+      }
+    }
+  }
+  // todo-list-completed
+  .widget-todo-list-wrapper {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    .widget-todo-item {
+      padding: 0.5rem 1.5rem 0.1rem 0.5rem;
+      .widget-todo-title-area {
+        i {
+          visibility: hidden;
+          color: $gray-200;
+        }
+      }
+      &:hover {
+        background-color: $hover-color;
+        .widget-todo-title-area {
+          i {
+            visibility: visible;
+          }
+        }
+      }
+      &.completed {
+        .widget-todo-title {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+
+.widget-overlay {
+  // Widget Overlay Card
+  .widget-overlay-card {
+    .overlay-primary {
+      /* Widget Card Overlay */
+      background: rgba($primary, 0.9);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .dropdown {
+      a {
+        color: inherit;
+        &:active {
+          color: $white !important;
+        }
+      }
+    }
+    .widget-overlay-card-title {
+    /* widget-overlay-card-title */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -85px;
+      margin-top: -27px;
+      color: $white;
+    }
+  }
+  // Widget Overlay Content
+  .widget-overlay-content {
+    .inclusive-btn {
+      margin-top: -24px;
+    }
+    // For Perfect Scrollbar
+    .table-responsive {
+      position: relative;
+    }
+  }
+}
+
+// Widget followers
+.widget-followers {
+  .widget-followers-heading-right {
+    i {
+      position: relative;
+      top: 4px;
+    }
+  }
+}
+
+// Widget img-top
+.widget-img-top {
+  .card-footer {
+    background-color: $body-bg;
+  }
+}
+
+// Widget Order Activity
+.widget-order-activity {
+  .badge-circle {
+    i {
+      position: relative;
+      top: 4px;
+    }
+  }
+  .widget-order-activity-footer {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $gray-600;
+    }
+  }
+}
+
+// Widget Notification
+.widget-notification {
+  .list-group-item {
+    .readable-mark-icon {
+      cursor: pointer;
+    }
+    &:last-child {
+      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+    &.list-group-item-action {
+      &:active {
+        color: inherit;
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+// Perfect Scrollbar For Widget User Details
+.widget-user-details {
+  .table-responsive {
+    position: relative;
+  }
+}
+
+/* Widgets Charts Starts */
+/*-----------------------*/
+
+// Statistics Multi Radial Widget - Remove default nav-tab arrow and border
+// ------------------------------------------------------------------------
+.widget-state-multi-radial {
+  .nav.nav-tabs {
+    border: 0 !important;
+  }
+  .nav-item {
+    &.current,
+    .nav-link {
+      &:after,
+      &:before {
+        border: 0 !important;
+      }
+    }
+  }
+}
+
+// Donut Charts in center
+#donut-chart-spending,
+#donut-chart-statistics {
+  .apexcharts-canvas {
+    margin: 0 auto;
+  }
+}
+
+.widget-timeline {
+/* widget timeline */
+  position: relative;
+  height: 415px;
+  padding-right: 1rem;
+}
+
+
+// Widget Earnings
+.widget-earnings-scroll {
+  position: relative;
+  .widget-earnings-width {
+    min-width: 390px;
+  }
+}
+
+#widget-earnings {
+  .widget-earnings-swiper {
+    &.swiper-container {
+      .swiper-slide {
+        /* widget Earnings swiper */
+        font-weight: $headings-font-weight;
+        background-color: $swiper-bg;
+        height: auto;
+        width: auto !important;
+        color: $text-muted;
+        cursor: pointer;
+        &.swiper-slide-active {
+        /* widget Earnings swiper slide active */
+          color: $white;
+          background-color: $primary !important;
+          box-shadow: 0 3px 6px 0 rgba($primary, 0.5) !important;
+        }
+      }
+    }
+  }
+  .wrapper-content {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+// todo card responsive in specific screen
+@media screen and (max-width:600px){
+  .widget-todo-list-wrapper{
+    .widget-todo-title-wrapper{
+      flex-direction: column;
+      .widget-todo-title-area{
+      margin-right: auto;
+      }
+      .widget-todo-item-action{
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+// Widgets Radial Charts
+@media screen and (max-width: 1200px) {
+  .widget-radial-charts {
+    .widget-card-details {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  // Content Hide from Widget-img-top
+  .widget-img-top {
+    .content-post {
+      display: none !important;
+    }
+  }
+  // Card header Block from widget-state-multi-radial
+  .widget-state-multi-radial {
+    .card-header {
+      display: block !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) and (min-width:900px){
+  .progress-card,
+  .overlay-image-card{
+    flex: 0 0 50%;
+    max-width:50%;
+  }
+
+  .whether-card{
+    flex: 0 0 100%;
+    max-width:100%;
+  }
+  .user-details-card{
+    flex: 0 0 100%;
+    max-width:100%;
+  }
+  .img-top-card,
+  .timline-card,
+  .widget-chat-card,
+  .earnings-card,
+  .user-profile-card,
+  .whether{
+    flex: 0 0 50%;
+    max-width:50%;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* IE Specific CSS for charts - radial-primary/success/danger */
+    .widget-radial-charts {
+      .widget-card-details {
+        display: block !important;
+      }
+    }
+  }

@@ -1,0 +1,54 @@
+// ================================================================================================
+//  File Name: page-users.scss
+//  Description: Page users SCSS.
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* user page css */
+/*---------------*/
+.users-list-wrapper{
+    .dataTables_length{
+        margin-top: 0 !important;
+        select{
+            margin: 0 .5rem 0 .5rem;
+        }
+    }
+    .dataTables_filter{
+        margin-top: 0 !important;
+    }
+}
+
+// users view page css
+.users-view{
+    .table-borderless{
+        td{
+            padding: .3rem 0 .3rem 0;
+            word-break: break-word;
+            white-space: normal;
+            &:first-child{
+                width: 140px;
+            }
+        }
+    }
+}
+// users view & users edit page common css
+.users-view, .users-edit {
+    .users-avatar-shadow{
+        box-shadow: 2px 4px 14px 0 rgba($black,0.4);
+    }
+}

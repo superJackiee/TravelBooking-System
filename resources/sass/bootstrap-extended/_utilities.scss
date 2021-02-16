@@ -1,0 +1,61 @@
+/*  Utilities css  */
+/*----------------*/ 
+.icon-left{
+    margin-right:0.5rem;
+}
+.icon-right{
+    margin-right:0.5rem;
+}
+.icon-spin {
+	display: inline-block;
+  animation: spin 1s infinite linear;
+}
+
+.blockOverlay{
+  z-index: 1050 !important;
+}
+.blockElement, .blockPage{
+  z-index: 1051 !important;
+}
+
+.hidden{
+	display: none;
+	visibility: hidden;
+}
+
+/*  Disabled */
+.disabled, :disabled{
+  color: $gray-200 !important;
+  a{
+    color: $gray-200 !important;
+  }
+  &:hover {
+		cursor: auto !important;
+	}
+}
+
+.round{@include border-radius(1.5rem);}
+.square{@include border-radius($btn-border-radius-square);}
+
+.icon-line-height{
+    line-height : 1.5rem !important;
+}
+
+
+/*  Boxicons Default Set Font-size */
+.bx{
+  font-size: 1.2rem;
+}
+
+/* drag n drop - bullets none on drag - as default */
+/*------------------------------------------------*/
+.gu-mirror{
+  list-style-type: none !important;
+}
+
+// line-ellipsis - For one line
+.line-ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

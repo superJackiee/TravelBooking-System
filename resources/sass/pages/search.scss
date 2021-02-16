@@ -1,0 +1,91 @@
+// ================================================================================================
+//  File Name: search.scss
+//  Description: Page content search pages page layouts SCSS.
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins overrides
+@import "../bootstrap/functions";
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* search page css */
+/*-----------------*/
+.search-bar-wrapper{
+  // nav active arrow indicator border-color
+  .nav{
+    &.nav-tabs{
+      border-bottom-color: transparent;
+      .dropdown-menu{
+        margin: .53rem ;
+      }
+      .nav-item{
+        .nav-link{
+          // nav tab and icon alignment
+          display: flex;
+          align-items: center;
+          i{
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+  .search-bar{
+    .search-input{
+      .search-btn{
+      /* search-bar button */
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        i{
+        /* search-bar icon */
+          top: 0;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  // search result
+  .search-results{
+    // video search result swiper
+    .swiper-container{
+      .swiper-slide {
+      /* Swiper slide for video section */
+        background-color: $white;
+        height: auto;
+        max-width: 18.66rem;
+        padding:.7rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        .slide-content{
+          .card-img-overlay{
+            i{
+              color: rgba($white,.7);
+            }
+          }
+        }
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev{
+      &:after{
+        border-radius: 50%;
+        background-color: $primary;
+        box-shadow: 0 2px 4px 0 rgba($black, 0.5) !important;
+      }
+      &.swiper-button-disabled{
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// ================================================================================================
+//     File Name: Footer.scss
+//     Description: Main footer styles.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/* Footer Css */
+/* ---------- */
+
+footer {
+    &.footer {
+        padding: $spacer ($spacer * 2.2);
+        a {
+            margin-left: 0.3rem;
+            color: $body-color;
+        }
+        // Heart Icon Css
+        span {
+            i {
+                color: $danger;
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+}
+
+/* Fixed Footer */
+
+.fixed-footer {
+    footer {
+        // Footer Light
+        &.footer-light {
+            background: $white;
+            box-shadow: 0px 8px 12px 12px rgba(25, 42, 70, 0.12);
+        }
+    }
+}
+
+/* Footer Hidden */
+
+.footer-hidden {
+    footer {
+        display: none;
+    }
+}
+
+// scroll to Top Footer Button
+.scroll-top {
+    position: fixed;
+    bottom: 5%;
+    padding: 0.5rem 0.83rem !important;
+    right: 30px;
+    display: none;
+    z-index: 99;
+}

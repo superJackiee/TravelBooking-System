@@ -1,0 +1,183 @@
+// =========================================================================================
+// 	File Name: search.scss
+// 	Description: Search  functionality.
+// 	----------------------------------------------------------------------------------------
+// 	Item Name: Frest HTML Admin Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ==========================================================================================
+
+/* Search */
+/* ------ */
+
+.navbar-container {
+    a.nav-link-search {
+        float: left;
+    }
+    .search-input {
+        float: left;
+        width: 0;
+        input {
+            width: 0;
+            border: none;
+            background: none;
+            line-height: 16px;
+            padding: 1.7rem 3.6rem;
+        }
+        &.open {
+            position: absolute;
+            left: 0;
+            background: $white;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            margin-top: -1px;
+            box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
+            .search-input-close,
+            .search-input-icon {
+                display: block;
+            }
+            input {
+                width: 100%;
+                outline: none;
+                background: none;
+            }
+        }
+        .search-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: $white;
+            width: 100%;
+            margin-top: 0.5rem;
+            padding-left: 0;
+            border-radius: $border-radius;
+            display: none;
+            &.show {
+                display: block;
+            }
+            li {
+                a {
+                    padding: 0.9rem 1rem;
+                    color: $body-color;
+                    span[class*="bx bx-"] {
+                        font-size: 1.25rem;
+                    }
+                }
+                &:first-child {
+                    border-top-left-radius: $border-radius;
+                    border-top-right-radius: $border-radius;
+                }
+                &:last-child {
+                    border-bottom-left-radius: $border-radius;
+                    border-bottom-right-radius: $border-radius;
+                }
+                &:hover,
+                &.current_item {
+                    background-color: #f2f4f4;
+                }
+            }
+        }
+        .search-input-icon {
+            z-index: 2;
+            z-index: 1002;
+            display: none;
+            position: absolute;
+            left: 1.5rem;
+            top: 37%;
+            cursor: pointer;
+            i {
+                font-size: 1.25rem;
+            }
+        }
+        .search-input-close {
+            z-index: 1001;
+            display: none;
+            position: absolute;
+            right: 2rem;
+            top: 32%;
+            cursor: pointer;
+            i {
+                font-size: 1.75rem;
+            }
+        }
+    }
+    // Bookmark
+    .bookmark-input {
+        position: absolute;
+        width: 25%;
+        display: none;
+        &.show {
+            display: block;
+        }
+        .bookmark-input-icon {
+            position: absolute;
+            z-index: 1001;
+            top: 0.65rem;
+            left: 1rem;
+        }
+        input {
+            padding: 0.7rem 0.7rem 0.7rem 2.5rem;
+            width: 100%;
+            background: $white;
+            border: 1px solid rgba($black, 0.2);
+            &:focus {
+                border: 1px solid $primary;
+            }
+        }
+        .search-list {
+            box-shadow: 0 15px 30px 0 rgba($black, 0.11),
+                0 5px 15px 0 rgba($black, 0.08);
+        }
+    }
+    .bookmark-icon {
+        cursor: pointer;
+    }
+    .dropdown.bookmark-dropdown {
+        padding: 1.4rem 0.5rem 1.35rem;
+        .dropdown-toggle:after {
+            display: none;
+        }
+    }
+}
+
+// navbar dark & semi-light
+.navbar-dark,
+.navbar-semi-light {
+    .search-input {
+        .input {
+            color: #f5f7fa;
+            border-radius: 0.5rem;
+        }
+        &.open {
+            .input {
+                color: #f5f7fa;
+                border: 1px solid #f5f7fa;
+            }
+        }
+    }
+}
+
+// Media Query for small screen
+@include media-breakpoint-down(sm) {
+    #navbar-mobile {
+        .search-input.open {
+            .input {
+                color: $gray-600;
+            }
+        }
+    }
+}
+
+/* static navbar search */
+.navbar-static {
+    .navbar-container {
+        .search-input {
+            &.open {
+                border-radius: 0;
+            }
+        }
+    }
+}

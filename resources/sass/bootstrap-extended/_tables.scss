@@ -1,0 +1,138 @@
+// ================================================================================================
+//     File Name: tables.scss
+//     Description: Tables pages custom scss
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/*   Table css   */
+/*---------------*/
+.table {
+  th, td{
+    /* default font-family to table data */
+    font-family: $font-family-monospace;
+  }
+  // default table head
+  thead {
+    i{
+      color: $gray-600;
+    }
+    th {
+      color: $table-head-color;
+      border-top: none;
+      vertical-align: middle;
+      font-size: .8rem;
+      letter-spacing: 1px;
+    }
+    text-transform: uppercase;
+  }
+  td {
+    vertical-align: middle;
+    border-bottom: 1px solid $border-color;
+    border-top: none;
+    // for additional icon in-line
+    a {
+      display: inline-block;
+      .badge-circle{
+        margin-bottom: -7px;
+        margin-top: -7px;
+      }
+    }
+  }
+  tbody{
+    tr{
+      //nested head bg color
+      &.group{
+        background-color: $body-bg;
+      }
+      // no bottom border in last row
+      &:last-child{
+        td{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .thead-dark {
+    th {
+      /* table thead dark */
+      background-color: $gray-700;
+      border-color: $gray-700;
+    }
+  }
+  // table bordered
+  &.table-bordered {
+    thead {
+      th {
+        border-top: 1px solid $border-color;
+      }
+    }
+  }
+  // table borderless
+  &.table-borderless {
+    thead {
+      tr {
+        border-bottom: 2px solid $table-border-color;
+      }
+    }
+    td {
+      border: none;
+    }
+  }
+  // table dark
+  &.table-dark {
+    i {
+      color: $white;
+      background-color: rgba($white, .09);
+    }
+    thead {
+      th {
+        color: $white;
+        background-color: $gray-700;
+      }
+    }
+    tbody {
+      td {
+        border-color: $gray-700;
+      }
+    }
+  }
+  // table striped
+  &.table-striped {
+    &.table-dark {
+      th {
+        background-color: $gray-700;
+      }
+      tbody {
+        td {
+          border-color: $gray-700;
+        }
+      }
+    }
+    &.table-hover {
+      tbody {
+        tr {
+          &:hover {
+            /* table striped hover */
+            background-color: $table-striped-hover;
+          }
+        }
+      }
+    }
+  }
+  // table transparent
+  &.table-transparent{
+    thead{
+      th{
+        background-color: transparent;
+      }
+    }
+    tbody{
+        background-color: transparent;
+    }
+  }
+}

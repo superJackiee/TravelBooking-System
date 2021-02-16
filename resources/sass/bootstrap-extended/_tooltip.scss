@@ -1,0 +1,56 @@
+/*    tooltip css  */
+/*----------------*/ 
+.tooltip{
+  .tooltip-inner{
+    // tooltip inner box-shadow
+    box-shadow: 0px 0px 10px 0px rgba(58,70,93,0.25);
+  }
+  // Tooltip-light scss
+  &.tooltip-light {
+    .tooltip-inner{
+      background-color: $white;
+      color: $body-color;
+      border: 1px solid $border-color;
+    }
+    &[x-placement^="top"]{
+      .arrow {
+        &:before {
+          /* tooltip arrow border Color */
+          border-top-color: $white;
+          top: -1px;
+
+        }
+      }
+    }
+    &[x-placement^="right"]{
+      .arrow {
+        &:before {
+          border-right-color: $white;
+          right: -1px;
+        }
+      }
+    }
+    &[x-placement^="bottom"]{
+      .arrow {
+        &:before {
+          border-bottom-color: $white;
+          bottom: -1px;
+        }
+      }
+    }
+    &[x-placement^="left"]{
+      .arrow {
+        &:before {
+          border-left-color: $white;
+          left: -1px;
+        }
+      }
+    }
+  }
+  &.tooltip-horizontal-bookmark{
+    /*  Tooltip Horizontal Layout - Bookmark Icons */
+    z-index: 1000 !important;
+    top: -7px;
+  }
+}
+

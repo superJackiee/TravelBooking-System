@@ -1,0 +1,296 @@
+/*=========================================================================================
+    File Name: vertical-menu-modern.scss
+    Description: A calssic vertical modern style menu with expand and collops support. It support
+    light & dark version, filpped layout, right side icons, native scroll and borders menu
+    item seperation.
+    ----------------------------------------------------------------------------------------
+    Item Name: Frest HTML Admin Template
+    Version: 1.0
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../variables/variables";
+@import "../../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../variables/components-variables";
+
+// Import first main menu mixin
+@import "../../mixins/main-menu-mixin";
+
+//  Vertical menu
+//=========================
+.vertical-layout {
+  &.vertical-menu-modern {
+    .main-menu {
+      .navigation {
+          > li > a > i {
+              width: 1.6rem !important; // give important bcz it takes default 60px from it's vendor js
+              margin-right: 1rem;
+              float: left;
+
+              &:not(.menu-livicon) {
+                  font-size: 1.4rem;
+              }
+          }
+
+        // Sub-menu icon size
+        .menu-content {
+            > li {
+                > a {
+                    transition: all 0.35s ease !important;
+
+                    > i {
+                        margin-right: 1.25rem;
+                    }
+                }
+            }
+        }
+      }
+    }
+
+    .main-menu {
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+    }
+
+    //Vertical menu [Expanded]
+    &.menu-expanded {
+      // Main menu expanded
+      .main-menu {
+        width: $menu-expanded-width;
+
+        .navigation {
+          > li {
+            > a {
+              > span {
+                &.badge {
+                  position: absolute;
+                  right: 7px;
+                }
+              }
+            }
+
+            &.open {
+              > a {
+                > span {
+                  &.badge {
+                    right: 19px;
+                  }
+                }
+              }
+            }
+          }
+
+          li {
+            @include vertical-menu-has-sub-arrow(1.2rem);
+          }
+        }
+      }
+
+      // Content expanded
+      .footer {
+        @include main-menu-width($menu-expanded-width);
+      }
+    }
+
+    //Vertical menu [Collapsed]
+    &.menu-collapsed {
+        //Navbar collapsed
+      .navbar {
+        // fixed-top navbar when menu-collapsed
+        &.fixed-top {
+            left: $menu-collapsed-width;
+        }
+      }
+
+      // Main menu collapsed
+      .main-menu {
+          width: $menu-collapsed-width;
+          transition: 300ms ease all;
+          backface-visibility: hidden;
+          transform: translate3d(0, 0, 0);
+
+          .navbar-header .brand-text,
+          .modern-nav-toggle {
+              display: none;
+          }
+
+          &:not(.expanded) {
+              .navigation-header {
+                  margin: 0;
+              }
+
+              .navigation li {
+                  a {
+                      display: block;
+
+                      .menu-title,
+                      .badge {
+                          display: none;
+                      }
+                  }
+
+                  &:last-child {
+                      margin-bottom: 1.25rem !important;
+                  }
+
+                  &.active {
+                      a {
+                          background: rgba($primary, 0.2);
+                          box-shadow: none;
+                      }
+                  }
+
+                  &.menu-collapsed-open {
+                      background: rgba($primary, 0.2);
+                      border: none;
+                  }
+              }
+          }
+
+          //Navigation collapsed
+          .navigation {
+              overflow: visible;
+
+              > li.navigation-header {
+                  span {
+                      display: none;
+                  }
+              }
+
+              > li {
+                  > a {
+                      text-overflow: inherit;
+
+                      > span {
+                          &.badge {
+                              float: none !important;
+                          }
+                      }
+
+                      i {
+                          margin-right: 2rem;
+                          float: left;
+                      }
+                  }
+              }
+          }
+
+          &.expanded {
+              width: $menu-expanded-width;
+              box-shadow: 5px 0 25px 0 rgba(55, 70, 95, 0.3);
+
+              .navigation {
+                  > li {
+                      &.navigation-header {
+                          span {
+                              display: block;
+                          }
+                      }
+
+                      > a {
+                          i {
+                              margin-right: 1rem;
+                          }
+
+                          > span {
+                              &.badge {
+                                  position: absolute;
+                                  right: 20px;
+                              }
+                          }
+                      }
+                  }
+
+                  li {
+                      @include vertical-menu-has-sub-arrow(1.2rem);
+                  }
+              }
+
+              .navbar-header .brand-text {
+                  display: inline;
+              }
+
+              .modern-nav-toggle {
+                  display: block;
+              }
+          }
+      }
+
+      // Brand center content collapsed
+      .navbar-static-top .navbar-wrapper,
+      .app-content,
+      .footer {
+          @include main-menu-width($menu-collapsed-width);
+      }
+    }
+  }
+}
+
+// Initially menu & content width for lg and up screen
+@include media-breakpoint-up(lg) {
+    .vertical-layout {
+        &.vertical-menu-modern {
+            .main-menu {
+                border-right: 1px solid $border-color;
+
+                &.menu-dark {
+                    border-right: 1px solid $theme-dark-border-color;
+                }
+            }
+
+            .footer {
+                @include main-menu-width($menu-expanded-width);
+            }
+        }
+    }
+}
+
+// Initially menu & content width for md and down screen
+@include media-breakpoint-down(lg) {
+    .vertical-layout {
+        &.vertical-menu-modern {
+            .main-menu {
+                width: 0;
+
+                .navigation {
+                    li.navigation-header span {
+                        display: none;
+                    }
+                }
+            }
+
+            .content,
+            .footer {
+                @include main-menu-width(0);
+            }
+        }
+    }
+}
+
+// Initially menu & content width for sm and down screen
+@include media-breakpoint-down(sm) {
+    .vertical-layout {
+        &.vertical-menu-modern {
+            .main-menu {
+                width: 0;
+            }
+
+            .content,
+            .footer {
+                @include main-menu-width(0);
+            }
+        }
+    }
+}
+
+// Import vertical-overlay-menu.scss for small screen support
+@import "vertical-overlay-menu.scss";

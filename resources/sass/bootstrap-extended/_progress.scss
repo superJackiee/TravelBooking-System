@@ -1,0 +1,41 @@
+//=========================================================================================
+//File Name: progress.scss
+// Description: Extended bootstrap progress bar scss.
+//  ----------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+// Author URL: http://www.themeforest.net/user/pixinvent
+// ----------------------------------------------------------------------------------------
+//==========================================================================================
+
+/*  progress bar css */
+/*------------------*/
+.progress {
+  height: $progress-size;
+  overflow: visible;
+  background-color: $progress-bar-bg;
+  .progress-bar{
+    position: relative;
+  }
+  // progress bar small
+  &.progress-sm {
+    height: $progress-size-sm;
+  }
+  // progress bar radius
+  .progress-bar {
+    border-radius: $progress-border-radius;
+    box-shadow: $progress-box-shadow;
+  }
+  // progress lebel
+  .progress-label{
+    &:before {
+      content: attr(aria-valuenow)'%';
+      position: absolute;
+      color: $black;
+      right: 0;
+      top: -1.6rem;
+      font-size: 1.0rem;
+    }
+  }
+}

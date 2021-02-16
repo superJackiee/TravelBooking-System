@@ -1,0 +1,436 @@
+// // Core variables and mixins
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+@import "../../bootstrap-extended/mixins";
+
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../core/variables/components-variables";
+
+/* calendar application css */
+/* ------------------------ */
+/* calendar-wrapper */
+.calendar-wrapper{
+  height:100%;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  .sidebar{
+    /* sidebar menu */
+    width: 190px;
+    height: 100%;
+    // border-right: 1px solid $border-color;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    transition: all .3s ease;
+    float: left;
+    padding: 1.53rem 1.33rem;
+    // sidebar new schedule button
+    .sidebar-new-schedule{
+      margin-bottom: 1.86rem;
+    }
+    .sidebar-calendars-item{
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  // calendar-view
+  .calendar-view{
+    width: calc(100% - 190px);
+    background-color: $white;
+    height: 100%;
+    float: right;
+    border-left: 1px solid $border-color;
+    // calendar action
+    .calendar-action{
+      padding: .66rem 1rem;
+      // calendar sidebar toggler for small screen
+      .sidebar-toggle-btn{
+        display: none;
+        }
+        //button action
+      .btn-action{
+        border: 1px solid $border-color;
+        padding:.267rem 1.5rem .267rem .9rem;
+        font-family: $font-family-monospace;
+      }
+      // dropdown menu active state
+      .dropdown-menu{
+        cursor: pointer;
+        .dropdown-item{
+          &:active{
+            color:$white;
+          }
+        }
+      }
+    }
+    // container of calendar
+    .calendar-content{
+      height: 100%;
+      // calendar popup
+      .tui-full-calendar-popup{
+        box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
+        .tui-full-calendar-popup-container{
+          border-radius: $border-radius;
+          border-color: transparent;
+          box-shadow: none;
+          // calendar button
+          .tui-full-calendar-button{
+            border-radius: $border-radius;
+            &:focus{
+              outline: none;
+            }
+          }
+          // calendar popup section of create schedule popup
+          .tui-full-calendar-popup-section{
+            display: flex;
+            .tui-full-calendar-popup-section-item{
+              display: flex;
+              align-items: center;
+              padding: 0 6px 0 12px;
+              border-radius: $border-radius;
+            }
+             // dropdown menu bullet
+            .tui-full-calendar-dropdown-menu{
+              width: 98.5%;
+              li[data-calendar-id="1"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $info !important;
+                }
+              }
+              li[data-calendar-id="2"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $primary !important;
+                }
+              }
+              li[data-calendar-id="3"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $secondary !important;
+                }
+              }
+              li[data-calendar-id="4"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $success !important;
+                }
+              }
+              li[data-calendar-id="5"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $warning !important;
+                }
+              }
+              li[data-calendar-id="6"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $secondary !important;
+                }
+              }
+              li[data-calendar-id="7"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $danger !important;
+                }
+              }
+              li[data-calendar-id="8"]{
+                .tui-full-calendar-calendar-dot{
+                  background-color: $light !important;
+                }
+              }
+            }
+          }
+          // create schedule popup's save button specific style
+          .tui-full-calendar-section-button-save{
+            button{
+              background-color: $primary;
+              box-shadow: 0 2px 4px 0 rgba($primary, 0.4);
+            }
+          }
+        }
+        // popup arrow idicator remove
+        .tui-full-calendar-popup-arrow{
+          display: none;
+        }
+        .tui-datepicker{
+          /* datepicker for create or update schedule */
+          box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
+          border-color: transparent;
+          border-radius: $border-radius;
+          .tui-is-selectable{
+            border-radius: $border-radius;
+          }
+          .tui-timepicker-column{
+            .tui-timepicker-select{
+              border-radius: $border-radius;
+            }
+          }
+        }
+        // shedule details view popup
+        &.tui-full-calendar-popup-detail{
+          //schedule detail view header
+          .tui-full-calendar-popup-section{
+            display: inline-block;
+          }
+          .tui-full-calendar-ic-edit{
+            display: none;
+          }
+          .tui-full-calendar-ic-delete{
+            display: none;
+          }
+           // schedule detail view popup's buttons
+          .tui-full-calendar-section-button{
+            margin-bottom: 1rem;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            // shedule details view edit button
+            .tui-full-calendar-popup-edit,
+            .tui-full-calendar-popup-delete{
+              border-radius: $border-radius;
+              width: auto;
+              padding: 4px 39px;
+              .tui-full-calendar-content{
+                color: $white;
+                font-size: 1rem;
+                font-weight: 500;
+                top: 0;
+              }
+            }
+            .tui-full-calendar-popup-edit{
+              background-color: $primary;
+              box-shadow: 0 2px 4px 0 rgba($primary, 0.4);
+            }
+
+            // shedule details view delete button
+            .tui-full-calendar-popup-delete{
+              background-color:$danger;
+            }
+
+            // vertical line between buttons
+            .tui-full-calendar-popup-vertical-line{
+              display: none;
+            }
+          }
+           // schedule detail view popup's vertical line
+          .tui-full-calendar-popup-top-line{
+            width: 5px;
+            height: 100%;
+            border-radius: $border-radius 0 0 $border-radius;
+          }
+        }
+      }
+      // overide calendar title icon
+      .tui-full-calendar-ic-title{
+        background: none;
+        font-family: 'boxicons' !important;
+        line-height: 1;
+        font-size: 1rem;
+        top: 0;
+        &::before{
+        content: "\eb06";
+        }
+      }
+      // overide calendar title icon
+      .tui-full-calendar-ic-location{
+        background: none;
+        font-family: 'boxicons' !important;
+        line-height: 1;
+        font-size: 1rem;
+        &::before{
+        content: "\eae6";
+        }
+      }
+      .tui-full-calendar-ic-date{
+        background: none;
+        font-family: 'boxicons' !important;
+        line-height: 1;
+        font-size: 1rem;
+        &::before{
+          content: "\ea2d";
+        }
+      }
+      .tui-full-calendar-ic-state{
+        background: none;
+        font-family: 'boxicons' !important;
+        line-height: 1;
+        font-size: 1rem;
+        &::before{
+          content: "\e97d";
+        }
+      }
+      .tui-full-calendar-ic-private{
+        background: none !important;
+        font-family: 'boxicons'!important;
+        line-height: 1;
+        font-size: 1rem;
+          &::before{
+            content: "\eadc";
+            top: -3px;
+            position: relative;
+          }
+        }
+      .tui-full-calendar-public{
+        .tui-full-calendar-ic-private{
+          &::before{
+            content: "\eade" !important;
+          }
+        }
+      }
+      .tui-full-calendar-section-private{
+        .tui-full-calendar-ic-private{
+          &:before{
+            content: "\eadc";
+          }
+        }
+      }
+      .tui-full-calendar-ic-user-b{
+        background: none !important;
+        font-family: 'boxicons'!important;
+        line-height: 1;
+        font-size: 1rem;
+        &::before{
+          content: "\eb6d";
+          position: relative;
+          left: 19px;
+        }
+      }
+      .tui-full-calendar-ic-location-b{
+        background: none !important;
+        font-family: 'boxicons'!important;
+        line-height: 1;
+        font-size: 1rem;
+        &::before{
+          content: "\eae6";
+        }
+      }
+      .tui-full-calendar-ic-repeat-b{
+        background: none !important;
+        font-family: 'boxicons'!important;
+        line-height: 1;
+        font-size: 1rem;
+        &::before{
+          content: "\eb52";
+        }
+      }
+      // schedule title
+      .tui-full-calendar-weekday-schedule-title{
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      .tui-full-calendar-popup-detail {
+        .tui-full-calendar-schedule-title{
+        /* calander popup */
+          font-family: $font-family-monospace;
+          font-weight: normal;
+        }
+        .tui-full-calendar-content{
+          color: $gray-200;
+        }
+      }
+      .tui-full-calendar-weekday-grid-date-decorator{
+      /* today date indicator */
+        background-color:#e7edf3;
+        color: $gray-600;
+      }
+      //creat schedule popup dropdown button bullet
+      .tui-full-calendar-popup-section-item{
+        .tui-full-calendar-calendar-dot{
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .app-content-overlay{
+  /* app overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 7;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: $border-radius;
+    &.show{
+      visibility: visible;
+      transition: all .3s ease;
+      opacity: 1;
+      background-color: rgba($black, 0.2);
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  // sidebar tranfor position on small screen
+  .calendar-wrapper {
+    .sidebar{
+      &.show{
+        transform: translateX(11%) translateY(-1px);
+      }
+    }
+    // calendar popup width change
+    .calendar-view{
+      .calendar-content{
+        .tui-full-calendar-floating-layer{
+          left: 0 !important;
+        }
+        .tui-full-calendar-popup-container{
+          max-width: 300px;
+          min-width: 0 !important;
+        }
+        .tui-full-calendar-popup-section-item.tui-full-calendar-section-location input{
+          width: auto;
+        }
+        .tui-full-calendar-popup .tui-full-calendar-popup-container .tui-full-calendar-popup-section{
+          flex-wrap: wrap;
+          .tui-full-calendar-popup-section-item{
+            margin-bottom: .5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .calendar-wrapper {
+    .sidebar{
+    /* sidebar hide on medium screen */
+      transform: translateX(-110%);
+      transition: transform .25s;
+      height: 100%;
+      position: absolute;
+      z-index: 8;
+      left: -24px;
+      width: auto;
+      background-color: #fafbfb;
+      border-right: 1px solid $border-color;
+      // sidebar visiable after show class added
+      &.show{
+        transform: translateX(13%) translateY(-1px);
+      }
+    }
+    // calendar view width
+    .calendar-view{
+      width:100%;
+      border-left: none;
+      .calendar-action{
+        .sidebar-toggle-btn{
+            display: inline;
+        }
+      }
+    }
+  }
+}
+@media screen and(min-width:1440px){
+  .calendar-wrapper{
+    height:100vh;
+    overflow: unset;
+    border-bottom: 1px solid $border-color;
+    .calendar-view .calendar-content{
+      height:93%
+    }
+  }
+}

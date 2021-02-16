@@ -1,0 +1,118 @@
+// ================================================================================================
+//     File Name: pick-a-date.scss
+//     Description: Pick a date pages custom css.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+@import "../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../core/variables/components-variables";
+
+/* Pick A Date Css */
+/* ------------- */
+
+.picker__input {
+  &.form-control {
+    background-color: $white;
+  }
+}
+
+.picker {
+  z-index: 10;
+  &.picker--opened {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 1.5rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      display: block;
+      background: $white;
+      transform: rotate(45deg) translate(-7px);
+      z-index: 10;
+      box-sizing: border-box;
+      border-top: 1px solid $pick-a-date-arrow-color;
+      border-left: 1px solid $pick-a-date-arrow-color;
+    }
+  }
+  // Picker Dropdown
+  .picker__holder {
+    margin-top: 0.6rem;
+    border-radius: 0.267rem;
+    box-shadow: 0 2px 16px 0 rgba($black, 0.2);
+  }
+  // Border Radius For Active Date, Date On Hover
+  .picker__day--infocus:hover,
+  .picker__day--outfocus:hover,
+  .picker__day--highlighted,
+  .picker__day--selected,
+  .picker__day--today {
+    border-radius: 50%;
+  }
+  // Bg Color For Day Highlighted
+  .picker__day--highlighted,
+  .picker__day--highlighted:hover,
+  .picker--focused .picker__day--highlighted {
+    background-color: $primary;
+  }
+  //Today'S Date Upper Corner Border
+  .picker__day--today:before,
+  .picker__button--today:before {
+    border-top-color: $primary;
+  }
+  //Picker Dropdown Bothside Arrow Convert In Box Icons
+  .picker__nav--prev:before,
+  .picker__nav--next:before {
+    font-family: "boxicons";
+  }
+  .picker__nav--next:before {
+    content: "\ebab";
+  }
+  .picker__nav--prev:before {
+    content: "\eaff";
+  }
+  // Close Button Convert In Boxicons
+  .picker__button--close:before {
+    font-family: "boxicons";
+    content: "\ec4e";
+  }
+}
+
+// Inline Pick-A-Date - Input Display None
+.inlineDatePicker {
+  display: none;
+}
+// Inline Pick-A-Date - Container
+#inlineDatePicker-container {
+  // Picker Calendar Scss
+  .picker {
+    height: 370px;
+    width: 280px;
+    position: relative;
+    z-index: 9;
+    // Picker Calendar - Arrow Display None
+    &.picker--opened:before {
+      display: none;
+    }
+  }
+  // Picker Holder Scss For Remaining Display Block - After Selecting Date
+  .picker__holder {
+    max-height: 480px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    display: block;
+  }
+}

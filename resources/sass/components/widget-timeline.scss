@@ -1,0 +1,71 @@
+// =========================================================================================
+// 	File Name: widget-timeline.scss
+// 	Description: widget timeline component
+// 	----------------------------------------------------------------------------------------
+// 	Item Name: Frest HTML Admin Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ==========================================================================================
+
+/* Timeline */
+/* ---------------- */
+
+.widget-timeline {
+  li {
+    padding: 1.1rem 0;
+    list-style: none;
+    position: relative;
+    &.timeline-items {
+      // timeline icon positioning
+      &:before {
+        position: absolute;
+        content: "";
+        left: -37px;
+        top: 17px;
+        border: 3px solid $white;
+        box-shadow: 1px 2px 6px 0 rgba(25, 42, 70, 0.3);
+        border-radius: 50%;
+        background: $primary;
+        height: 13px;
+        width: 13px;
+        z-index: 2;
+      }
+      &.active:not(:last-child) {
+        // timeline line positioning
+        &:after {
+          position: absolute;
+          content: "";
+          width: 1px;
+          background: $timeline-border;
+          left: -31px;
+          top: 22px;
+          height: 100%;
+          z-index: 1;
+        }
+      }
+      // timeline content visual
+      .timeline-content {
+        padding: 0.5rem 1rem;
+        background-color: $timeline-content-bg;
+        border-radius: 0.267rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+    // timeline time typograpgy
+    .timeline-time {
+      float: right;
+      color: $text-muted;
+      font-size: 0.9rem;
+    }
+    // timeline title typograpgy
+    .timeline-title {
+      margin-bottom: 0.25rem;
+    }
+    // timeline text typograpgy
+    .timeline-text {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

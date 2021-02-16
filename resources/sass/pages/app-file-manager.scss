@@ -1,0 +1,344 @@
+// ================================================================================================
+// 	File Name: email-application.scss
+// 	Description: SCC file for email application page.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Frest HTML Admin Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* File manager application css */
+/*------------------------------*/
+.file-manager-application {
+  .content-area-wrapper {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    // Content area overlay
+    .app-file-overlay {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: 7;
+      visibility: hidden;
+      opacity: 0;
+      border-radius: $border-radius;
+      &.show {
+        visibility: visible;
+        transition: all 0.3s ease;
+        opacity: 1;
+        background-color: rgba($black, 0.2);
+      }
+    }
+    // Sidebar Area Start
+    // -------------------
+    .sidebar {
+      // Left Sidebar area
+      .app-file-sidebar {
+        width: $menu-expanded-width;
+        height: calc(100vh - 9rem);
+        border-right: 1px solid $border-color;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        transition: all 0.3s ease;
+        // left side menu close icon for small screen
+        .app-file-sidebar-close {
+          position: absolute;
+          right: 0.25rem;
+          top: 0.25rem;
+          cursor: pointer;
+          font-size: 1.25rem;
+          z-index: 5;
+          visibility: hidden;
+        }
+        // left side bar content section
+        .app-file-sidebar-left {
+          width: 100%;
+          z-index: 3;
+          background-color: transparent;
+          // Add File Button
+          .add-new-file {
+            padding: 1px 1.5rem;
+            margin-bottom: 0.8rem;
+          }
+          //left side menu content list
+          .app-file-sidebar-content {
+            padding: 0 1.7rem 1.7rem;
+            position: relative;
+            height: calc(100% - 6.4rem);
+            .file-manager-progress {
+              .progress {
+                background-color: $file-progress-bg;
+              }
+            }
+          }
+          // active menu line indicator
+          .list-group {
+            .list-group-item {
+              padding: 0.6rem 0;
+              font-weight: $font-weight-bold;
+              background-color: transparent;
+              border: none;
+              &.active {
+                color: $primary;
+                &::before {
+                  content: "";
+                  width: 2px;
+                  height: 30px;
+                  background-color: $primary;
+                  position: absolute;
+                  left: -26px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .app-file-sidebar-info {
+      /* Right Sidebar */
+        box-shadow: -8px 0 18px 0 rgba(25, 42, 70, 0.13);
+        height: calc(100vh - 9rem);
+        width: 357px;
+        border-radius: 0.25rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background-color: $white;
+        position: fixed;
+        transform: translateX(110%);
+        transition: all 0.3s ease;
+        z-index: 8;
+        right: 4.4rem;
+        bottom: 4rem;
+        opacity: 0;
+        // Right Sidebar when shown
+        &.show {
+          opacity: 1;
+          transform: translateX(9%) translateY(1px);
+        }
+        .card-header {
+          padding-top: 1.2rem;
+          padding-bottom: 1.2rem;
+        }
+        // Nav Tabs Link
+        .nav-tabs {
+          .nav-link {
+            background-color: transparent !important;
+            box-shadow: none;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            &:active,
+            &.active {
+              color: $primary !important;
+            }
+          }
+        }
+      }
+    }
+
+    // Content Area Start
+    // -------------------
+    .content-right {
+      width: calc(100% - #{$menu-expanded-width});
+      background-color: $white;
+      .content-wrapper {
+        padding: 0;
+      }
+      .app-file-area {
+        // content area header
+        .app-file-header {
+          padding: 0.6rem 1.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid $border-color;
+          // Toggle Icon
+          .sidebar-toggle {
+            cursor: pointer;
+            position: relative;
+            top: 6px;
+            float: left;
+            i {
+              font-size: 1.75rem;
+            }
+          }
+        }
+        .app-file-content {
+          height: calc(100vh - 12.85rem);
+          position: relative;
+          .app-file-content-logo {
+            padding: 10px 6px;
+            border-bottom: 1px solid $border-color;
+            background-color: $body-bg;
+            img {
+              margin: 25px 0;
+            }
+          }
+          // File and Folder Name
+          .app-file-name,
+          .app-file-folder-name {
+            color: $gray-600;
+            margin-bottom: 0.1rem;
+          }
+          // Folder Icon Color
+          .app-file-folder {
+            .app-file-folder-logo {
+              i {
+                color: $folder-icon-color;
+              }
+            }
+          }
+          // area for each card in content area
+          .app-file-info {
+            cursor: pointer;
+            // vertical ellipsis
+            .app-file-edit-icon {
+              color: $file-label-color;
+            }
+          }
+        }
+      }
+    }
+    .app-file-label {
+    /* app file labels */
+      font-family: $font-family-monospace;
+      letter-spacing: 1px;
+      margin: 1.2rem 0 0.5rem 0;
+      color: $file-label-color;
+    }
+  }
+}
+
+// Sidebar timeline
+// ----------------
+.app-file-sidebar-info {
+  .widget-timeline {
+    // timeline content visual
+    .timeline-content {
+      font-weight: $font-weight-bold;
+      font-size: 13px;
+      color: $timeline-content-color;
+    }
+    // timeline time typograpgy
+    .timeline-time {
+      font-size: 0.8rem;
+    }
+    // timeline text typograpgy
+    .timeline-text {
+      font-size: 0.8rem;
+      color: $gray-200;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .file-manager-application {
+    .app-content {
+      .content-area-wrapper {
+        // left side menu
+        .sidebar-left {
+          position: relative;
+          .app-file-sidebar {
+            width: auto;
+          }
+          // side bar close button
+          .app-file-sidebar-left {
+            background-color: $left-sidebar-bg;
+            width: $menu-expanded-width;
+            height: calc(100vh - 8.9rem);
+            transform: translateX(-110%);
+            transition: transform 0.25s;
+            position: fixed;
+            z-index: 8;
+            left: -2px;
+            .app-file-sidebar-close {
+              visibility: visible;
+            }
+          }
+          &.show {
+            .app-file-sidebar-left {
+              transform: translateX(13%) translateY(-1px);
+            }
+          }
+          // Right Sidebar height in md screen
+          .app-file-sidebar-info {
+            height: calc(100vh - 9rem);
+          }
+        }
+        // right side content
+        .content-right {
+          width: 100%;
+          // email app details view
+          .app-file-area {
+            width: 100%;
+            border-radius: $border-radius;
+          }
+        }
+      }
+    }
+  }
+}
+// Right Sidebar width for sm
+@include media-breakpoint-down(sm) {
+  .file-manager-application {
+    .content-area-wrapper {
+      .sidebar {
+        .app-file-sidebar-info {
+          width: auto;
+          right: 3.95rem;
+        }
+      }
+    }
+  }
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .file-manager-application {
+    .content-area-wrapper {
+      .sidebar-left {
+        .app-file-sidebar-left {
+          left: -15px !important;
+        }
+        .app-file-sidebar-info {
+          &.show {
+            transform: translateX(14.5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 422px) {
+  .file-manager-application {
+    .content-area-wrapper {
+      .content-right{
+        .app-file-area {
+          .app-file-content {
+            height: calc(100vh - 13.3rem);
+          }
+        }
+      }
+    }
+    .app-file-header{
+      .app-file-header-icons{
+        display: none;
+      }
+    }
+  }
+}
+
+

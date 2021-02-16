@@ -1,0 +1,28 @@
+/*    collapse rotate icon css    */
+/*-------------------------------*/
+.collapse-icon {
+  .card-header {
+    position: relative;
+  }
+
+  [data-toggle="collapse"] {
+    &:before {
+      position: absolute;
+      top: 26%;
+      right: 20px;
+      font-family: 'boxicons';
+      content: "\ea1d";
+      transition: all 200ms linear 0s;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+  &.accordion-icon-rotate {
+    [aria-expanded="true"] {
+      &:before {
+        /* collapse icon rotate animation css */
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

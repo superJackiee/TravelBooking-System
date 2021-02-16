@@ -1,0 +1,71 @@
+// ===============================================================================================
+//  File Name: chart-chartist.scss
+//  Description: Colors Chartist SCSS
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../core/variables/variables";
+@import "../core/variables/chartist-variables";
+@import "../bootstrap/variables";
+
+@import "../core/variables/components-variables";
+
+/* Chartist css */
+/* -------------*/
+// color variable extended
+$ct-series-colors: (
+  $primary, $warning, $danger, $success, $info, $secondary, $primary, $warning, $danger, $success, $info, $secondary, $primary, $warning, $danger
+) ;
+// mixin for color of stroke and fill
+@mixin ct-chart-series-color($color) {
+  .#{$ct-class-point}, .#{$ct-class-line}, .#{$ct-class-bar}, .#{$ct-class-slice-donut} {
+    stroke: $color;
+  }
+
+  .#{$ct-class-slice-pie}, .#{$ct-class-slice-donut-solid}, .#{$ct-class-area} {
+    fill: $color;
+  }
+}
+// loop for color
+@if $ct-include-colored-series {
+  @for $i from 0 to length($ct-series-names) {
+    .#{$ct-class-series}-#{nth($ct-series-names, $i + 1)} {
+      $color: nth($ct-series-colors, $i + 1);
+      @include ct-chart-series-color($color);
+    }
+  }
+}
+
+// label font size increase for pie and donut
+.ct-chart-pie,
+.ct-chart-donut{
+  .ct-label{
+    font-size: 1rem;
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+/* IE specific css for hide animated chart */
+  #chartist-wrapper{
+    .animated-chart{
+      display: none;
+    }
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+/* Edge specific css for hide animated chart */
+  #chartist-wrapper{
+    .animated-chart{
+      display: none;
+    }
+  }
+}

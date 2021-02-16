@@ -1,0 +1,41 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "i18n": "Dashboard",
+      "slug": "dashboard",
+      "id":"#ico",
+      "icon": "desktop",
+      "dropdown": "0"
+    },
+    {
+      "url": "/create_enquiry",
+      "name": "Enquiry",
+      "slug": "enquiry",
+      "icon": "comments",
+      "dropdown": "0"
+    },
+    {
+      "url": "/crm",
+      "name": "CRM",
+      "slug": "crm",
+      "icon": "users",
+      "dropdown": "0"
+    },
+    {
+      "url": "/product",
+      "name": "Products",
+      "slug": "crm",
+      "icon": "gift",
+      "dropdown": "0"
+    },
+    {
+      "url": "/settings",
+      "name": "Settings",
+      "slug": "setting",
+      "icon": "gear",
+      "dropdown": "0"
+    }
+  ]
+}

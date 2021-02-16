@@ -1,0 +1,77 @@
+// ================================================================================================
+// 	File Name: semi-dark-layout.scss
+// 	Description: SCSS file for semi dark layout.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Frest HTML Admin Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* Semi Dark Layout */
+/* ---------------- */
+body {
+  &.semi-dark-layout {
+    // main menu
+    .main-menu {
+      background-color: $menu-dark-bg-color !important;
+      .shadow-bottom {
+        background: linear-gradient(180deg, $theme-dark-shadow-gradient 44%, $theme-dark-shadow-gradient2 73%, $theme-dark-shadow-gradient3);
+      }
+      .navbar-header {
+        z-index: 3;
+        .modern-nav-toggle {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    // main menu content
+    .main-menu-content {
+      .navigation-main {
+        background-color: transparent;
+        .nav-item {
+          i {
+            color: $theme-dark-text-color;
+          }
+          a:after {
+            color: $theme-dark-text-color;
+          }
+          .menu-content {
+            .active {
+              .menu-item {
+                color: $primary !important;
+              }
+            }
+          }
+        }
+        .active {
+          .menu-title,
+          i {
+            color: $primary;
+          }
+        }
+        .sidebar-group-active {
+          background: $theme-dark-card-color !important;
+          .menu-content {
+            .active {
+              background-color: $menu-dark-active-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+}

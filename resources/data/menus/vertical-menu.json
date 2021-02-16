@@ -1,0 +1,708 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "i18n": "Dashboard",
+      "icon": "desktop"
+    },
+    {
+      "navheader": "Apps"
+    },
+    {
+      "url": "app-email",
+      "name": "Email",
+      "i18n": "Email",
+      "icon": "envelope-pull"
+    },
+    {
+      "url": "app-chat",
+      "name": "Chat",
+      "i18n": "Chat",
+      "icon": "comments"
+    },
+    {
+      "url": "app-todo",
+      "name": "Todo",
+      "i18n": "Todo",
+      "icon": "check-alt"
+    },
+    {
+      "url": "app-calendar",
+      "name": "Calendar",
+      "i18n": "Calendar",
+      "icon": "calendar"
+    },
+    {
+      "url": "app-kanban",
+      "name": "Kanban",
+      "i18n": "Kanban",
+      "icon": "grid"
+    },
+    {
+      "url": "#",
+      "name": "Invoice",
+      "i18n": "Invoice",
+      "icon": "notebook",
+      "submenu": [
+        {
+          "url": "app-invoice-list",
+          "name": "Invoice List",
+          "i18n": "Invoice List",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "app-invoice-view",
+          "name": "Invoice",
+          "i18n": "Invoice",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "app-invoice-edit",
+          "name": "Invoice Edit",
+          "i18n": "Invoice Edit",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "app-invoice-add",
+          "name": "Invoice Add",
+          "i18n": "Invoice Add",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "app-file-manager",
+      "name": "File Manager",
+      "i18n": "File Manager",
+      "icon": "save"
+    },
+    {
+      "navheader": "UI Elements"
+    },
+    {
+      "url": "#",
+      "name": "Content",
+      "i18n": "Content",
+      "icon": "retweet",
+      "submenu": [
+        {
+          "url": "content-grid",
+          "name": "Grid",
+          "i18n": "Grid",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "content-typography",
+          "name": "Typography",
+          "i18n": "Typography",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "content-text-utilities",
+          "name": "Text Utilities",
+          "i18n": "Text Utilities",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "content-syntax-highlighter",
+          "name": "Syntax Highlighter",
+          "i18n": "Syntax Highlighter",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "content-helper-classes",
+          "name": "Helper Classes",
+          "i18n": "Helper Classes",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "colors",
+      "name": "Colors",
+      "i18n": "Colors",
+      "icon": "drop"
+    },
+    {
+      "url": "#",
+      "name": "Icons",
+      "i18n": "Icons",
+      "icon": "bulb",
+      "submenu": [
+        {
+          "url": "icons-livicons",
+          "name": "LivIcons",
+          "i18n": "LivIcons",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "icons-boxicons",
+          "name": "BoxIcons",
+          "i18n": "BoxIcons",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Card",
+      "i18n": "Card",
+      "icon": "square",
+      "submenu": [
+        {
+          "url": "card-basic",
+          "name": "Basic",
+          "i18n": "Basic",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "card-actions",
+          "name": "Card Actions",
+          "i18n": "Card Actions",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "widgets",
+      "name": "Widgets",
+      "i18n": "Widgets",
+      "icon": "thumbnails-small",
+      "tag": "New",
+      "tagcustom": "badge badge-light-primary badge-pill badge-round float-right"
+    },
+    {
+      "url": "#",
+      "name": "Components",
+      "i18n": "Components",
+      "icon": "box-add",
+      "submenu": [
+        {
+          "url": "component-alerts",
+          "name": "Alerts",
+          "i18n": "Alerts",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-buttons-basic",
+          "name": "Buttons",
+          "i18n": "Buttons",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-breadcrumbs",
+          "name": "Breadcrumbs",
+          "i18n": "Breadcrumbs",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-carousel",
+          "name": "Carousel",
+          "i18n": "Carousel",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-collapse",
+          "name": "Collapse",
+          "i18n": "Collapse",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-dropdowns",
+          "name": "Dropdowns",
+          "i18n": "Dropdowns",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-list-group",
+          "name": "List Group",
+          "i18n": "List Group",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-modals",
+          "name": "Modals",
+          "i18n": "Modals",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-pagination",
+          "name": "Pagination",
+          "i18n": "Pagination",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-navbar",
+          "name": "Navbar",
+          "icon": "bx bx-right-arrow-alt",
+          "i18n": "Navbar"
+        },
+        {
+          "url": "component-tabs-component",
+          "name": "Tabs Component",
+          "i18n": "Tabs Component",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-pills-component",
+          "name": "Pills Component",
+          "i18n": "Pills Component",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-tooltips",
+          "name": "Tooltips",
+          "i18n": "Tooltips",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-popovers",
+          "name": "Popovers",
+          "i18n": "Popovers",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-badges",
+          "name": "Badges",
+          "i18n": "Badges",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-pill-badges",
+          "name": "Pill Badges",
+          "i18n": "Pill Badges",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-progress",
+          "name": "Progress",
+          "i18n": "Progress",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-media-objects",
+          "name": "Media Objects",
+          "i18n": "Media Objects",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-spinner",
+          "name": "Spinner",
+          "i18n": "Spinner",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "component-bs-toast",
+          "name": "Toasts",
+          "i18n": "Toasts",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Extra Components",
+      "i18n": "Extra Components",
+      "icon": "briefcase",
+      "submenu": [
+        {
+          "url": "ex-component-avatar",
+          "name": "Avatar",
+          "i18n": "Avatar",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "ex-component-chips",
+          "name": "Chips",
+          "i18n": "Chips",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "ex-component-divider",
+          "name": "Divider",
+          "i18n": "Divider",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "navheader": "Forms & Tables"
+    },
+    {
+      "url": "#",
+      "name": "Form Elements",
+      "i18n": "Form Elements",
+      "icon": "check",
+      "submenu": [
+        {
+          "url": "form-inputs",
+          "name": "Input",
+          "i18n": "Input",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-input-groups",
+          "name": "Input Groups",
+          "i18n": "Input Groups",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-number-input",
+          "name": "Number Input",
+          "i18n": "Number Input",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-select",
+          "name": "Select",
+          "i18n": "Select",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-radio",
+          "name": "Radio",
+          "i18n": "Radio",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-checkbox",
+          "name": "Checkbox",
+          "i18n": "Checkbox",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-switch",
+          "name": "Switch",
+          "i18n": "Switch",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-textarea",
+          "name": "Textarea",
+          "i18n": "Textarea",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-quill-editor",
+          "name": "Quill Editor",
+          "i18n": "Quill Editor",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-file-uploader",
+          "name": "File Uploader",
+          "i18n": "File Uploader",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "form-date-time-picker",
+          "name": "Date & Time Picker",
+          "i18n": "Date & Time Picker",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "form-layout",
+      "name": "Form Layout",
+      "i18n": "Form Layout",
+      "icon": "settings"
+    },
+    {
+      "url": "form-wizard",
+      "name": "Form Wizard",
+      "i18n": "Form Wizard",
+      "icon": "priority-low"
+    },
+    {
+      "url": "form-validation",
+      "name": "Form Validation",
+      "i18n": "Form Validation",
+      "icon": "check-alt"
+    },
+    {
+      "url": "form-repeater",
+      "name": "Form Repeater",
+      "i18n": "Form Repeater",
+      "icon": "priority-low"
+    },
+    {
+      "url": "table",
+      "name": "Table",
+      "i18n": "Table",
+      "icon": "thumbnails-big"
+    },
+    {
+      "url": "extended",
+      "name": "Table extended",
+      "i18n": "Table extended",
+      "icon": "thumbnails-small"
+    },
+    {
+      "url": "datatable",
+      "name": "Datatable",
+      "i18n": "Datatable",
+      "icon": "morph-map"
+    },
+    {
+      "navheader": "Pages"
+    },
+    {
+      "url": "page-user-profile",
+      "name": "User Profile",
+      "i18n": "User Profile",
+      "icon": "user"
+    },
+    {
+      "url": "page-faq",
+      "name": "FAQ",
+      "i18n": "FAQ",
+      "icon": "question-alt"
+    },
+    {
+      "url": "page-knowledge-base",
+      "name": "Knowledge Base",
+      "i18n": "Knowledge Base",
+      "icon": "info-alt"
+    },
+    {
+      "url": "page-search",
+      "name": "Search",
+      "i18n": "Search",
+      "icon": "search"
+    },
+    {
+      "url": "page-account-settings",
+      "name": "Account Settings",
+      "i18n": "Account Settings",
+      "icon": "wrench"
+    },
+    {
+      "url": "#",
+      "name": "User",
+      "i18n": "User",
+      "icon": "users",
+      "submenu": [
+        {
+          "url": "page-users-list",
+          "name": "List",
+          "i18n": "List",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "page-users-view",
+          "name": "View",
+          "i18n": "View",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "page-users-edit",
+          "name": "Edit",
+          "i18n": "Edit",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Authentication",
+      "i18n": "Authentication",
+      "icon": "unlock",
+      "submenu": [
+        {
+          "url": "auth-login",
+          "name": "Login",
+          "i18n": "Login",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        },
+        {
+          "url": "auth-register",
+          "name": "Register",
+          "i18n": "Register",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        },
+        {
+          "url": "auth-forgot-password",
+          "name": "Forgot Password",
+          "i18n": "Forgot Password",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        },
+        {
+          "url": "auth-reset-password",
+          "name": "Reset Password",
+          "i18n": "Reset Password",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        },
+        {
+          "url": "auth-lock-screen",
+          "name": "Lock Screen",
+          "i18n": "Lock Screen",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Miscellaneous",
+      "i18n": "Miscellaneous",
+      "icon": "share",
+      "submenu": [
+        {
+          "url": "page-coming-soon",
+          "name": "Coming Soon",
+          "i18n": "Coming Soon",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        },
+        {
+          "url": "#",
+          "name": "Error",
+          "i18n": "Error",
+          "icon": "bx bx-right-arrow-alt",
+          "submenu": [
+            {
+              "url": "error-404",
+              "name": "404",
+              "i18n": "404",
+              "icon": "bx bx-right-arrow-alt",
+              "newTab":"_blank"
+            },
+            {
+              "url": "error-500",
+              "name": "500",
+              "i18n": "500",
+              "icon": "bx bx-right-arrow-alt",
+              "newTab":"_blank"
+            }
+          ]
+        },
+        {
+          "url": "page-not-authorized",
+          "name": "Not Authorized",
+          "i18n": "Not Authorized",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        },
+        {
+          "url": "page-maintenance",
+          "name": "Maintenance",
+          "i18n": "Maintenance",
+          "icon": "bx bx-right-arrow-alt",
+          "newTab":"_blank"
+        }
+      ]
+    },
+    {
+      "navheader": "Charts & Maps"
+    },
+    {
+      "url": "#",
+      "name": "Charts",
+      "i18n": "Charts",
+      "icon": "pie-chart",
+      "tag": "3",
+      "tagcustom": "badge badge-pill badge-round badge-light-info float-right mr-2",
+      "submenu": [
+        {
+          "url": "chart-apex",
+          "name": "Apex",
+          "i18n": "Apex",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "chart-chartjs",
+          "name": "Chartjs",
+          "i18n": "Chartjs",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "chart-chartist",
+          "name": "Chartist",
+          "i18n": "Chartist",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "maps-google",
+      "name": "Google Maps",
+      "i18n": "Google Maps",
+      "icon": "globe"
+    },
+    {
+      "navheader": "Extensions"
+    },
+    {
+      "url": "ext-component-sweet-alerts",
+      "name": "Sweet Alert",
+      "i18n": "Sweet Alert",
+      "icon": "warning-alt"
+    },
+    {
+      "url": "ext-component-toastr",
+      "name": "Toastr",
+      "i18n": "Toastr",
+      "icon": "morph-map"
+    },
+    {
+      "url": "ext-component-noui-slider",
+      "name": "NoUi Slider",
+      "i18n": "NoUi Slider",
+      "icon": "settings"
+    },
+    {
+      "url": "ext-component-drag-drop",
+      "name": "Drag & Drop",
+      "i18n": "Drag & Drop",
+      "icon": "priority-high"
+    },
+    {
+      "url": "ext-component-tour",
+      "name": "Tour",
+      "i18n": "Tour",
+      "icon": "paper-plane"
+    },
+    {
+      "url": "ext-component-swiper",
+      "name": "Swiper",
+      "i18n": "Swiper",
+      "icon": "morph-orientation-tablet"
+    },
+    {
+      "url": "ext-component-treeview",
+      "name": "Treeview",
+      "i18n": "Treeview",
+      "icon": "morph-sort-alt"
+    },
+    {
+      "url": "ext-component-block-ui",
+      "name": "Block-UI",
+      "i18n": "Block-UI",
+      "icon": "expand"
+    },
+    {
+      "url": "ext-component-media-player",
+      "name": "Media Player",
+      "i18n": "Media Player",
+      "icon": "music"
+    },
+    {
+      "url": "ext-component-miscellaneous",
+      "name": "Miscellaneous",
+      "i18n": "Miscellaneous",
+      "icon": "loader-10"
+    },
+    {
+      "url": "ext-component-i18n",
+      "name": "i18n",
+      "i18n": "i18n",
+      "icon": "globe"
+    }
+  ]
+}

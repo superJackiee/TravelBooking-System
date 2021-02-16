@@ -1,0 +1,242 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+
+/* Kanban Board Application css */
+/*------------------------------*/
+.kanban-container{
+  width: 100% !important;
+  .kanban-board{
+    border-radius: $border-radius;
+    padding: 1rem 0rem;
+    margin: 0 1.8rem 1rem 0 !important;
+    width: 18.67rem !important;
+    background-color: $kanban-board-bg;
+
+    .kanban-board-header {
+    /* kanban-header */
+      font-size: 1.2rem;
+      font-family: $font-family-monospace;
+      color: $gray-600;
+      padding: 0 0.93rem;
+      display: flex;
+      justify-content: space-between;
+      // dropdown
+      .dropdown{
+        float: right;
+        .dropdown-toggle{
+          &:after{
+            display: none;
+          }
+        }
+      }
+
+      .kanban-title-board {
+      /* kanban title */
+        font-weight: normal;
+        cursor: text;
+        padding: 0 0.5rem;
+        width: 200px;
+        &:hover, &:focus{
+          background-color: $gray-600;
+          color: $white;
+          border-radius: $border-radius;
+          outline: none;
+          text-overflow: clip;
+        }
+      }
+      .kanban-title-button{
+      /* kanban title button */
+        position: absolute;
+        bottom: 0;
+        padding: 0.467rem 0rem;
+        display: block;
+        color: $gray-600;
+        font-weight: $font-weight-bold;
+        font-size: 0.8rem;
+      }
+    }
+    // kanban drag
+    .kanban-drag{
+      padding: 13px;
+      min-height: auto;
+    }
+    .kanban-item{
+    /* kanban item */
+      padding: 0.53rem 0.8rem;
+      border-radius: $border-radius;
+      margin-bottom: 1rem;
+      box-shadow: -4px 4px 6px 0 rgba(55,70,95,0.12);
+      position: relative;
+      &:before{
+        content: "";
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 0.5rem;
+      }
+      &:hover{
+        cursor: default;
+      }
+      &:last-child{
+        margin-bottom: 0.5rem;
+      }
+      .kanban-image{
+        img{
+          border-radius: $border-radius;
+        }
+      }
+    }
+  }
+}
+
+.kanban-overlay{
+/* kanban overlay */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  &.show{
+    visibility: visible;
+    transition: all .3s ease;
+    opacity: 1;
+    background-color: rgba($black, 0.2);
+  }
+}
+
+
+.kanban-sidebar{
+/* kanban sidebar */
+  box-shadow: -8px 0 18px 0 rgba(25,42,70,0.13);
+  height: 100vh;
+  width: 23.8rem;
+  background-color: $white;
+  position: fixed;
+  transform: translateX(110%);
+  transition: all .3s ease;
+  z-index: 1033;
+  right: 2rem;
+  left: auto;
+  bottom: 0;
+  top: -1px;
+  opacity: 0;
+  overflow: hidden;
+  // Close Icon
+  .card-header{
+    .close-icon{
+      color: $gray-600;
+      opacity: 1 !important;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  // kanban-sidebar - display
+  &.show{
+    opacity: 1;
+    transform: translateX(9%) translateY(1px);
+  }
+  // Edit kanban sidebar Items
+  .edit-kanban-item{
+    height: 100vh;
+    .card-content{
+      height: calc(100% - 8rem);
+      .form-group{
+        >label{
+          color: $kanban-sidebar-label;
+          margin-bottom: 0.67rem;
+        }
+        select{
+          border-radius: $border-radius;
+          display: block;
+        }
+      }
+      // Custom-file label background
+      .custom-file{
+        .custom-file-label{
+          &:after{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    // buttons with icon
+    .card-footer{
+      .btn{
+        i{
+          top: 0;
+        }
+      }
+    }
+    // Date Picker position
+    .picker{
+      position: relative;
+    }
+  }
+  // quill editor
+  .quill-wrapper{
+    .snow-container{
+      .ql-snow, .ql-toolbar{
+        border: none;
+      }
+      .ql-toolbar{
+        .btn{
+          width: auto;
+          line-height: 0.9;
+          padding: 0.467rem 1.2rem;
+          &:hover{
+            color: $white;
+          }
+        }
+      }
+      // Ql-link set width
+      .ql-tooltip{
+        left: 0 !important;
+        input[type=text]{
+          width: 100px;
+        }
+      }
+    }
+    // placeholder position
+    .ql-editor.ql-blank::before{
+      left: 0.3rem;
+    }
+    .ql-editor{
+      min-height: 7.93rem;
+      padding: 0;
+    }
+  }
+}
+
+// Sidebar Width in xs screen
+@media (max-width: 420px){
+  .kanban-sidebar{
+    width: 19rem;
+    right: 1.6rem;
+    .quill-wrapper{
+      .snow-container{
+        // Ql-link set width
+        .ql-tooltip{
+          input[type=text]{
+            width: 70px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../core/variables/components-variables";
+
+/* For Drag And Drop css */
+/* --------------------- */
+
+#draggable-cards{
+  .card{
+    cursor: grab;
+  }
+}
+
+#basic-list-group,#multiple-list-group-a,#multiple-list-group-b{
+  .list-group-item{
+    cursor: grab;
+  }
+}
+
+#clone-lists{
+  .chip{
+    cursor: grab;
+  }
+}
+
+/* For Multi List */
+#multiple-list-group-a,#multiple-list-group-b{
+  min-height: 5.714rem;
+}
+
+
+// For Handle
+#dd-with-handle{
+  .list-group{
+    min-height: 5.714rem;
+    .handle{
+      /* handle in list-group*/
+      padding: 0 5px;
+      margin-right: 5px;
+      background-color: rgba($black, 0.1);
+      cursor: move;
+      font-size: 1.2rem;
+    }
+  }
+}
+

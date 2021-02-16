@@ -1,0 +1,23 @@
+/*     Alerts css   */
+/*-----------------*/
+.alert {
+  // alert with close button
+  &.alert-dismissible {
+    .close  {
+      color: $white;
+      opacity: 1;
+      top: -4px;
+      text-shadow: none;
+      font-weight: normal;
+      font-size: $h3-font-size;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+
+  i{
+    /* alert with icon */
+    margin-right: 0.8rem;
+  }
+}

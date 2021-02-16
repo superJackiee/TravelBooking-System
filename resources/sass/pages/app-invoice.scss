@@ -1,0 +1,422 @@
+// ================================================================================================
+//  File Name: invoice.scss
+//  Description: Invoice Layout page layouts SCSS.
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* Invoice Application css */
+/*-------------------------*/
+.invoice-view-wrapper{
+  // divider border style change
+  hr{
+    border-style: dashed;
+  }
+  // invoice address
+  .invoice-info{
+    .invoice-from,
+    .invoice-to{
+      margin-bottom: .8rem;
+    }
+  }
+  // Invoice Product details
+  .invoice-product-details{
+    .table{
+      th{
+        font-weight: 500;
+      }
+      th,
+      td{
+        padding: .75rem 2rem;
+      }
+    }
+  }
+  // invoice subtotal
+  .invoice-subtotal{
+    .invoice-calc{
+      margin: .2rem 0;
+      .invoice-title{
+        width: 171px;
+      }
+      .invoice-value{
+        color: $invoice-value-color;
+        margin-bottom: 0;
+      }
+    }
+  }
+// invoice action section
+  .invoice-action-wrapper{
+    background-color: $invoice-actions-bg;
+    .invoice-action-btn{
+      margin-bottom: 1.2rem;
+      // invoice send btn
+      .invoice-send-btn{
+        box-shadow: 0 2px 4px 0 rgba($primary, 0.6);
+      }
+    }
+  }
+}
+
+// Invoice List //
+.invoice-list-wrapper{
+  .dataTables_wrapper{
+    // data table top action
+    .top{
+      border: 1px solid $border-color;
+      background-color: $white;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      // datatable search
+      .action-filters{
+        .dataTables_filter{
+          padding: 0 15px;
+          label{
+            width: 100%;
+            margin-bottom: 0;
+            position: relative;
+            font-family: boxicons!important;
+            line-height: 1;
+            font-size: 1rem;
+            // search icon
+            &::after{
+              position: absolute;
+              content: "\ebbc";
+              left: 20px;
+              top: 12px;
+            }
+            // search input
+            input{
+              width: 99%;
+              height: 38px;
+              font-family:$font-family-sans-serif;
+              padding-left: 2rem;
+              font-size: 1rem;
+              &::placeholder{
+                font-family:$font-family-sans-serif;
+                color: $gray-200;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+      // data table action button
+      .action-btns{
+        button{
+          padding:0.367rem 1.5rem;
+        }
+      }
+    }
+    // data table
+    .invoice-data-table{
+      background-color: $white;
+      border: 1px solid $border-color;
+      border-top: none;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      border-collapse:separate !important;
+      border-spacing: 0;
+      thead{
+        th{
+          font-weight: normal;
+          font-size: .99rem;
+          // last child sorting arrow remove
+          &:last-child{
+            &::after,
+            &::before{
+              display: none;
+            }
+          }
+        }
+      }
+      // second td and th padding change
+      tr{
+        &:hover{
+          box-shadow: 0 0 6px 0 rgba($black, 0.12);
+        }
+        th:nth-child(2),
+        td:nth-child(2){
+          padding-left: 10px;
+        }
+        .invoice-action{
+          a{
+            color: #b3c0ce;
+          }
+        }
+        // for all td
+        td{
+          white-space: nowrap;
+        }
+       }
+      //  checkbox cell
+      .dt-checkboxes-cell{
+        width: 1px !important;
+        padding: 0 20px 3px 19px ;
+        &::after,
+        &::before{
+          display: none;
+        }
+        // checkbox customization
+       input{
+        width: 0;
+        position: relative;
+          &::before{
+            content: '';
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+            background-color: $white;
+            border: 1px solid $border-color;
+          }
+          &::after{
+            content: ' ';
+            height: 20px;
+            width: 20px;
+            border: 1px solid $border-color;
+            position: absolute;
+            border-radius: 4px;
+            top: 0;
+            left: 0;
+            transition: 100ms ease-in-out;
+          }
+          &:checked{
+            &::after{
+              border-top-style: none;
+              border-right-style: none;
+              -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+              height: 0.4rem;
+              width: 0.8rem;
+              border-color: $primary;
+              border-radius: 0;
+              border-width: 2px;
+              top: 6px;
+              left: 4px;
+            }
+            &::before{
+              box-shadow: 0 0 6px 0 rgba(22, 22, 22, 0.2);
+            }
+          }
+        }
+      }
+      tbody{
+        .selected-row-bg{
+          background-color: #e7edf3;
+        }
+        .bullet-sm{
+          margin-right: .2rem;
+        }
+      }
+    }
+  }
+  table.dataTable.dtr-column>tbody>tr>td.control:before,
+  table.dataTable.dtr-column>tbody>tr>th.control:before{
+    line-height: 18px;
+  }
+}
+
+// Invoice Edit //
+.invoice-edit-wrapper{
+  // divider border style change
+  hr{
+    border-style: dashed;
+  }
+  // invoice address
+  .invoice-info{
+    .invoice-to{
+      margin-bottom: .8rem;
+    }
+  }
+
+  // date picker
+  .invoice-date-picker{
+    .pickadate{
+      max-width:130px;
+    }
+  }
+
+  // invoice items
+  .invoice-item-title{
+    color: $gray-600;
+    font-weight: 500;
+  }
+  // delete and dropdown icon
+  .invoice-icon{
+    .dropdown{
+      .dropdown-toggle{
+        &::after{
+          display: none;
+        }
+      }
+      // dropdown menu arrow
+      .dropdown-menu{
+        width: 20rem;
+        &::before{
+          display: none;
+        }
+      }
+    }
+  }
+  // invoice item repeate button
+  .invoice-repeat-btn{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  // invoice subtotal values
+  .invoice-subtotal-value{
+    color:  $invoice-value-color;
+  }
+  // invoice subtotal title
+  .invoice-subtotal-title{
+    color:$body-color;
+  }
+  // subtotal preview button
+  .subtotal-preview-btn{
+    box-shadow: 0 2px 4px 0 rgba($primary, 0.4);
+  }
+  //invoice actions wrapper
+  .invoice-action-wrapper{
+    background-color: $invoice-actions-bg;
+    // invoice actions button
+    .invoice-action-btn{
+      .invoice-send-btn{
+        box-shadow: 0 2px 4px 0 rgba($primary, 0.6);
+      }
+    }
+  }
+  .invoice-terms{
+    // // invoice tems title
+    .invoice-terms-title{
+      font-family: $font-family-monospace;
+      color: $gray-600;
+    }
+  }
+}
+
+// to make invoice subtotal responsive
+@media screen and(max-width:1290px){
+  .invoice-subtotal{
+    width: 100% !important;
+    .invoice-title{
+      width: auto !important;
+    }
+  }
+}
+@media screen and (max-width:596px){
+  // action btn
+ .action-btns{
+   margin-bottom: 1rem;
+   padding-left: 23px;
+ }
+}
+
+@media screen and (max-width:767px){
+  // accept payment div has border in small screen
+  .invoice-payment{
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: 1rem;
+  }
+}
+
+
+@media print {
+
+  /* Hide a Unnecessary div while print invoice*/
+  html,body {
+    visibility: hidden;
+  }
+
+  .invoice-print-area {
+    visibility: visible;
+    page-break-after: auto;
+   
+   .divider{
+     margin: .5rem 0 !important;
+   }
+  }
+  body.dark-layout .card{
+     box-shadow: none !important;
+  }
+
+  .invoice-action-wrapper,
+  .sidenav-main,
+  .navbar,
+  .btn-customizer,
+  .theme-cutomizer,
+  .btn-buy-now,
+  .page-footer {
+    display: none;
+  }
+  .horizontal-menu.navbar-sticky .content > .content-wrapper{
+    margin-top:0 !important;
+  }
+  html body.navbar-sticky .app-content .content-wrapper,
+  body.vertical-layout.vertical-menu-modern.menu-collapsed .app-content{
+    margin: 0;
+    padding: 0;
+  }
+  .main-menu{
+    display: none;
+  }
+  /* card shadow remove while printing invoice*/
+  .card {
+    box-shadow: none;
+    .card-content {
+      padding: 0 !important;
+    }
+  }
+
+  /* table border added while printing invoice*/
+  table {
+    th,
+    td {
+      border: 1px solid $border-color;
+    }
+  }
+
+  /* column size change*/
+  .invoice-subtotal {
+    .row {
+      .col {
+        width: 50% !important;
+      }
+    }
+  }
+
+  .invoice-date-number,
+  .invoice-logo-title,
+  .invoice-info {
+    .col {
+      width: 50% !important;
+    }
+  }
+
+}
+
+// omitted header and footer while print
+@page {
+  size: auto;
+  /* auto is the initial value */
+  margin: 0;
+  padding: 0;
+  /* this affects the margin in the printer settings */
+}

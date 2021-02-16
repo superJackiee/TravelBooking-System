@@ -1,0 +1,215 @@
+// ================================================================================================
+// 	File Name: custom-rtl.scss
+//  Description: Template RTL CSS support.
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/*  Custom CSS RTL */
+/* --------------- */
+
+/*  Align icons position */
+.main-menu {
+    .navigation li > a > i,
+    .dropdown-menu i,
+    .dropdown-user > a > i,
+    .navigation > li > a > i {
+        float: right;
+    }
+}
+.dropdown-user.nav-item i {
+    float: right;
+}
+
+.horizontal-menu {
+    .main-menu-content {
+        #main-menu-navigation > li > a > i {
+            float: right;
+        }
+    }
+}
+
+.menu-expanded .form-group i {
+    float: inherit;
+}
+
+.form-control-position i {
+    top: 25%;
+    position: absolute;
+    right: 25%;
+}
+
+/* Dopzone horizontal scrollbar issue */
+.dz-hidden-input {
+    position: relative !important;
+}
+/* RTL version sticky sidebar float */
+.content-wrapper .sticky-wrapper,
+.content-right-sidebar .sticky-wrapper {
+    float: left;
+}
+
+// jquery ui icon position rtl fix TODO:AJ: add rtl support for jQ UI
+.ui-widget-icon-block {
+    right: 50%;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    right: 3rem;
+}
+
+.square {
+    &.slider-xl {
+        .noUi-handle {
+            &:before {
+                left: 5px;
+            }
+
+            &:after {
+                left: 10px;
+            }
+        }
+    }
+    .noUi-handle {
+        &:before {
+            left: 0px;
+        }
+
+        &:after {
+            left: 5px;
+        }
+    }
+    &.slider-xs {
+        .noUi-handle {
+            &:before {
+                left: -2px;
+            }
+
+            &:after {
+                left: 1px;
+            }
+        }
+    }
+}
+
+.noUi-vertical {
+    &.square {
+        .noUi-handle {
+            &:before {
+                left: -1px;
+            }
+            &:after {
+                left: -1px;
+            }
+        }
+    }
+}
+
+.btn i[class^="icon-"],
+.btn i[class*=" icon-"] {
+    line-height: 1.25rem;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    direction: ltr;
+}
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Email Application */
+
+.email-application {
+    .app-content {
+        .list-group {
+            .list-group-item {
+                i {
+                    float: right !important;
+                }
+            }
+        }
+    }
+}
+/* Perfact scrollbar RTL fix */
+body .ps__rail-y {
+    right: -6px !important;
+}
+/*  calendar app */
+.calendar-application {
+    .content-wrapper {
+        .sidebar {
+            .sidebar-calendars {
+                .tui-full-calendar-checkbox-round {
+                    + span {
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Input Group with Dropdown Component */
+.input-group {
+    .input-group-prepend {
+        .dropdown-menu {
+            right: auto;
+        }
+    }
+}
+
+/* Right dropdown menu */
+.dropdown-menu.dropdown-menu-right::before {
+    right: 1rem;
+}
+
+/* Quill Editor - arrow icons */
+.ql-snow {
+    .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) {
+        svg {
+            right: auto;
+        }
+    }
+}
+
+// popover on rtl
+.popover {
+    left: initial !important;
+}
+.bs-popover-left > .arrow,
+.bs-popover-auto[x-placement^="left"] > .arrow {
+    left: calc((0.5rem + 1px) * -1);
+    right: initial;
+    transform: rotate(180deg);
+}
+.bs-popover-right > .arrow,
+.bs-popover-auto[x-placement^="right"] > .arrow {
+    right: calc((0.5rem + 1px) * -1);
+    left: initial;
+    transform: rotate(180deg);
+}
+// datatable accending and decending order
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before {
+    left: 0.5em;
+}
+// progress bar
+.progress-bar-animated {
+    animation: progress-bar-stripes 40s linear infinite;
+}
+// kanban app
+.kanban-board {
+    float: left !important;
+}
+.kanban-container .kanban-board .kanban-board-header .kanban-title-button {
+    left: 14px;
+}

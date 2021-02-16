@@ -1,0 +1,85 @@
+/*    Breadcrumb css    */
+/*---------------------*/
+.breadcrumb{
+  > li {
+    + li::before {
+        padding-right: .867rem;
+    }
+  }
+
+  .breadcrumb-item{
+    a{
+      color: $gray-500;
+      i{
+        /* Breadcrumb home icon scss */
+        color: $primary;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+
+  .breadcrumb-item + .breadcrumb-item{
+    &:before{
+      /* Breadcrumb divider icon default */
+      content: "\ea1d";
+      font-family: 'boxicons';
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  &.breadcrumb-divider{
+    padding: 0;
+    display: inline-flex;
+    .breadcrumb-item + .breadcrumb-item{
+      &:before{
+        /* Breadcrumb Divider Icon with active Link fill */
+          content: "|";
+          color: $breadcrumb-divider-color;
+          font-size: 1.5rem;
+          position: relative;
+          top: -3px;
+      }
+    }
+    .breadcrumb-item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.4rem 0 0.4rem 1rem;
+      &:first-child{
+        padding-left: 1.67rem;
+      }
+
+      &.active{
+        /* Breadcrumb active item */
+        background-color: $primary;
+        color: $white;
+        border-radius: $border-radius;
+        padding-right: 1.67rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1.2rem;
+        &:before{
+          content: "";
+        }
+      }
+    }
+  }
+
+  &.rounded-pill{
+    /* Breadcrumb with rounded border and active link fill */
+    background-color: $white;
+    box-shadow: 3px 3px 14px 0 rgba($black, .12);
+
+    // active item - border radius
+    &.breadcrumb-divider{
+      .breadcrumb-item{
+        &.active{
+          border-radius: 50rem;
+        }
+      }
+    }
+  }
+}

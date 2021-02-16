@@ -1,0 +1,527 @@
+/*=========================================================================================
+	File Name: horizontal-menu.scss
+	Description: A classic horizontal menu for easy navingation & support all devices.
+	It support light & dark version, filpped layout, right side icons, borders menu for
+	item seperation.
+	----------------------------------------------------------------------------------------
+	Item Name: Stack - Responsive Admin Theme
+	Version: 3.2
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../variables/variables";
+@import "../../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../variables/components-variables";
+
+// Import first main menu mixin
+@import "../../mixins/main-menu-mixin";
+
+
+// Horizontal Menu
+//=========================
+.horizontal-menu{
+  // When page Scroll down
+  .is-sticky{
+    .header-navbar{
+      box-shadow: 0px 4px 12px 0 rgba(25, 42, 70, 0.13);
+    }
+  }
+  &.navbar-sticky {
+    top: 0;
+    .header-navbar{
+      position: fixed;
+      width: 100%;
+    }
+    .content{
+      > .content-wrapper{
+        margin-top: 8.75rem !important;
+      }
+    }
+  }
+  &.navbar-static{
+    .header-navbar.navbar-sticky{
+      position: sticky;
+      top: 0;
+    }
+    .content{
+      > .content-wrapper{
+        margin-top: 0;
+      }
+    }
+    &.navbar-scrolled  {
+      .header-navbar.navbar-sticky{
+        position: fixed;
+      }
+    }
+  }
+
+  //-------------------//
+  // Content Area margin
+  //-------------------//
+  .content{
+    margin-left: 0;
+  }
+  //---------------//
+  // Navbar Header //
+  //---------------//
+  .header-navbar{
+    background-color: $body-bg;
+    border-bottom : 1px solid $border-color;
+    z-index: 999 !important;
+    left: 0 !important;
+    // navbar-container
+    .navbar-container {
+      padding-left: 1.5rem !important;
+      padding-right: 1.3rem !important;
+      .bookmark-wrapper{
+        .menu-toggle{
+          top: 2px;
+        }
+      }
+      a.nav-link-expand {
+        padding: 1.2rem 0.75rem 1.15rem 0.75rem !important;
+      }
+    }
+    // navbar-wrapper
+    .navbar-wrapper{
+      margin-left: 0 !important;
+      .nav-search{
+        .search-input{
+          input{
+            padding: 1.7rem 3.6rem !important;
+          }
+        }
+      }
+    }
+    &.navbar-horizontal{
+      top: 68px;
+      position: fixed;
+      width: 100%;
+      z-index: 99 !important;
+      &.navbar-static-top{
+        position: absolute !important;
+      }
+    }
+    // Navbar- Brand Center - Logo
+    &.navbar-brand-center {
+      .navbar-header {
+        position: absolute;
+        left: 50%;
+        margin-left: -65px;
+        padding: 0;
+        z-index: 1000;
+        .navbar-brand  {
+          display: flex;
+          align-items: center;
+          margin-right: 0;
+          // Brand Logo Scss
+          .brand-logo {
+            height: 30px;
+            width: 30px;
+            .logo{
+              height: 30px;
+            }
+          }
+
+          // Brand Text Scss
+          .brand-text {
+            color: $white;
+            padding-left: 1rem;
+            letter-spacing: 0.01rem;
+            font-size: 1.57rem;
+          }
+        }
+      }
+    }
+
+    &.navbar-horizontal{
+      .dropdown-menu{
+        .dropdown-submenu{
+					position: relative;
+					&.openLeft{
+						.dropdown-menu{
+							left: auto !important;
+							right: 100%;
+						}
+          }
+        }
+      }
+    }
+  }
+  //---------------------------------//
+  // Header Navbar Dropdown z-index //
+  //--------------------------------//
+  .navbar-expand-lg {
+    .navbar-nav {
+      .dropdown-menu{
+        z-index: 100;
+      }
+    }
+  }
+
+  //-------------------------//
+  // Main Menu Header Navbar //
+  //-------------------------//
+  .navbar-expand-sm {
+    .navbar-nav {
+      // icon scss for each li
+      .dropdown-menu{
+        li {
+          a {
+            transition: all .35s ease !important;
+            i{
+              margin-right: 0.2rem;
+              font-size: 1rem;
+            }
+          }
+          &:hover{
+            >a{
+              padding-left: 25px;
+            }
+          }
+          // disabled menu item
+          &.disabled{
+            a{
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+      li{
+        // li icon scss
+        i{
+          width: 1.6rem !important;
+          margin-right: 0.4rem;
+        }
+      }
+      // First li spicific scss
+      >li{
+        padding: 10px 0;
+        // li active scss
+        &.active, &.sidebar-group-active{
+          >a{
+            background-color: #e9ecec;
+            border-radius: 4px;
+          }
+        }
+        // li text scss
+        .nav-link{
+          padding-right: .85rem;
+          padding-left: .85rem;
+          display: flex;
+          align-items: center;
+          &:after{
+            left: 0.5rem;
+          }
+        }
+        // If sub-item of main-menu item is active (Not have sub-menu)
+        li{
+          &:not(.sidebar-group-active){
+            &.active{
+              a{
+                background: rgba($primary,.2) !important;
+                color:$primary !important;
+                border-left: 4px solid $primary;
+                padding-left: 1rem !important;
+                i{
+                  color: $primary;
+                }
+              }
+            }
+          }
+          // If sub-item of main-menu item is active (It has sub-menu)
+          &.sidebar-group-active{
+            background-color: #f2f4f4;
+            >a{
+              >i{
+                color: $primary !important;
+              }
+            }
+            .dropdown-menu{
+              // active menu-item of of Sub-menu
+              li{
+                &:not(.sidebar-group-active){
+                  &.active{
+                    a{
+                      background: rgba($primary,.2);
+                      color:$primary;
+                      border-left: 4px solid $primary;
+                      padding-left: 1.4rem;
+                      i{
+                        color: $primary;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      // Menu Dropdown scss
+      .dropdown{
+        &.show{
+          // first dropdown display block with animation
+          >.dropdown-menu {
+            animation: 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+          }
+        }
+        // dropdown menu
+        .dropdown-menu {
+          min-width: 270px;
+          border: 1px solid $border-color;
+          padding: 0.7rem 0;
+          // dropdown menu - default up arrow display none
+          &:before{
+            border: none;
+            background-color: transparent;
+          }
+          // dropdown submenu display block with animation
+          .dropdown-submenu{
+            &.show{
+              >.dropdown-menu{
+                display: block;
+                top: 0 !important;
+                left: 100%;
+                margin-top: 4px;
+                margin-left: 1px;
+                animation: 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout;
+              }
+            }
+            // dropdown submenu - right arrow
+            .dropdown-toggle{
+              &:after{
+                content: "\ea1d" !important;
+                font-family: 'boxicons';
+                font-size: 1rem;
+                color: #8494a7;
+                display: inline-block;
+                right: 18px;
+                top: 11px;
+                left: auto;
+                position: absolute;
+              }
+            }
+            // Next dropdown Submenu of dropdown-submenu
+            ul{
+              li{
+                a{
+                  i{
+                    margin-right: 0;
+                    font-size: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+        // Dropdown Item
+        .dropdown-item{
+          text-transform: capitalize;
+          font-size: 1rem;
+          padding: 0.7rem 1.3rem;
+          // remove default bg-color and color from all dropdown item
+          &:active, &:focus, &:hover{
+            background-color: transparent;
+            color: inherit;
+            i{
+              color: inherit;
+            }
+          }
+        }
+        // dropdown down arrow - For Main Menu Items
+        .dropdown-toggle{
+          &:after{
+            content: "\ea17";
+            font-family: 'boxicons';
+            font-size: 1.2rem;
+            color: #8494a7;
+            display: inline-block;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+  // Main-menu scss when horizontal menu-collapsed
+	&.menu-collapsed{
+		#main-menu-navigation{
+			>li{
+				.nav-link {
+          padding-top: 0.6rem;
+          padding-bottom: 0.6rem;
+          span, &:after{
+            display: none;
+          }
+          i{
+            margin-right: 0;
+          }
+        }
+			}
+		}
+  }
+  &.email-application,
+  &.chat-application,
+  &.todo-application,
+  &.file-manager-application{
+    .content{
+      .content-wrapper{
+        height: calc(100vh - 15rem) !important;
+      }
+    }
+  }
+  &.navbar-sticky{
+    .content{
+      .content-area-wrapper{
+        padding-top: 0;
+        margin-top: 10rem !important;
+      }
+    }
+  }
+  // Email Application
+  &.email-application .content-area-wrapper {
+    .content-right .email-app-list-wrapper .email-app-list .email-user-list{
+      height: calc(100vh - 19.67rem);
+    }
+    .email-app-sidebar .email-app-menu .form-group-compose{
+      margin-bottom:0 !important;
+    }
+    .sidebar .email-app-sidebar{
+      height: calc(100vh - 15rem);
+      .email-app-menu .sidebar-menu-list{
+        height: calc(100% - 6.4rem);
+      }
+    }
+    .sidebar .compose-new-mail-sidebar{
+      height: calc(100vh - 15rem);
+    }
+    .content-right .email-app-details .email-scroll-area .email-detail-head .collapse-header .card-header .information .dropdown-menu{
+      transform: translate3d(11px, 1px, 0px) !important;
+    }
+  }
+
+  // Chat Application
+  &.chat-application {
+    .chat-user-profile,
+    .chat-profile,
+    .chat-sidebar{
+      height: calc(100vh - 15rem);
+      .chat-user-profile-scroll, .chat-profile-content{
+        height: calc(100vh - 28.5rem) !important;
+      }
+    }
+    .chat-profile{
+          bottom: 5rem;
+    }
+    .chat-window-wrapper{
+      .chat-container{
+        height: calc(100vh - 23.6rem);
+      }
+      .chat-start{
+        height: calc(100vh - 15rem);
+      }
+    }
+  }
+
+  // Todo Application
+  &.todo-application .content-area-wrapper {
+    .todo-new-task-sidebar{
+      height: calc(100vh - 15rem);
+      bottom: 5rem;
+    }
+    .sidebar .todo-sidebar{
+      height: calc(100vh - 15rem);
+    }
+    .content-right .todo-app-list-wrapper .todo-app-list .todo-task-list{
+      height: calc(100vh - 18.7rem);
+    }
+  }
+
+  // File Manager
+  &.file-manager-application .content-area-wrapper{
+    .sidebar .app-file-sidebar{
+      height: calc(100vh - 14rem);
+    }
+    .content-right .app-file-area .app-file-content{
+      height: calc(100vh - 17.85rem);
+    }
+    .sidebar .app-file-sidebar-info{
+      height: calc(100vh - 14rem);
+      bottom: 4rem;
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    transform: translate3d(0,6px,0);
+    opacity: 0
+  }
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+@keyframes fadeout {
+  from {
+    transform: translate3d(0,-6px,0);
+    opacity: 0
+  }
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .horizontal-layout{
+    .header-navbar{
+      // navbar-wrapper
+      .navbar-container {
+        padding-left: 1.5rem !important;
+        padding-right: 1rem !important;
+        .bookmark-wrapper{
+          .menu-toggle{
+            top: 2px;
+          }
+        }
+        a.nav-link-expand {
+          padding: 1.2rem 0.75rem 1.15rem 0.75rem !important;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .horizontal-layout{
+    .header-navbar{
+      // navbar-wrapper
+      .navbar-container {
+        padding-left: 1.8rem !important;
+      }
+    }
+  }
+}
+@media (max-width: 576px){
+  .horizontal-layout{
+    .header-navbar{
+      // navbar-wrapper
+      .navbar-container {
+        padding-left: 1rem !important;
+        padding-right: 0.2rem !important;
+      }
+    }
+  }
+}
+// Import vertical-overlay-menu.scss for small screen support
+@import "vertical-overlay-menu.scss";

@@ -1,0 +1,68 @@
+/*   Modals css   */
+/*---------------*/
+.modal-open{
+  /* body overflow hidden when modal open */
+  overflow: hidden !important; 
+}
+.modal {
+  // model content css
+  .modal-content {
+    box-shadow: $modal-content-box-shadow-sm-up; // As Bootstrap is not adding shadow
+    // modal header
+    i{
+      top: 0; //bootsrap exteded code overlap
+    }
+    // modal header
+    .modal-header {
+      align-items: center;
+      // modal title
+      .modal-title {
+        font-family: $font-family-monospace;
+        font-weight: normal;
+        font-size: $font-size-lg;
+      }
+      .close {
+        /* close button for modal hide */
+        padding: 0;
+        margin: 0;
+        height: 2.4rem;
+        width: 2.4rem;
+        background-color: $hover-color;
+        border-radius: 50%;
+        &:hover,
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+    }
+  }
+  // model borderless css
+  &.modal-borderless {
+    // header and footer border none in borderless
+    .modal-header {
+      border: none !important;
+    }
+    .modal-footer {
+      border: none !important;
+    }
+  }
+  //modal full size
+  .modal-full {
+    max-width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
+
+/* media query for modal in small screen */
+@media(max-width:576px) {
+  // padding on small screen
+  .modal {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    .modal-sm {
+      max-width: unset;
+    }
+  }
+}

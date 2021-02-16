@@ -1,0 +1,74 @@
+/*    Buttons css   */
+/*-----------------*/
+.btn {
+  // to remove extra spacing because of border in btn outline
+  &[class*="btn-outline-"]{
+    padding-top: calc(#{$btn-padding-y} - 1px);
+    padding-bottom: calc(#{$btn-padding-y} - 1px);
+    // btn-lg padding from top-bottom
+    &.btn-lg{
+      padding-top: calc(#{$btn-padding-y-lg} - 1px);
+      padding-bottom: calc(#{$btn-padding-y-lg} - 1px);
+    }
+    // btn-sm padding from top-bottom
+    &.btn-sm{
+      padding-top: calc(#{$btn-padding-y-sm} - 1px);
+      padding-bottom: calc(#{$btn-padding-y-sm} - 1px);
+    }
+  }
+  i{
+    /* Button with icons - make it in center */
+    position: relative;
+    top: 3px;
+  }
+  &.btn-white, &.btn-white:active, &.btn-white:hover, &.btn-white:focus{
+    /* btn-white - color on different states */
+    color: inherit !important;
+  }
+  // For btn shadow on hover
+  &.shadow{
+    &:hover, &.hover {
+      box-shadow: 0 4px 12px 0 rgba($black, 0.2) !important;
+    }
+  }
+  &.btn-icon {
+    /* For btn-icon */
+    padding: 0.4rem 0.6rem;
+  }
+  // For btn-icon in btn-sm
+  &.btn-sm{
+    &.btn-icon{
+      padding: .5rem;
+    }
+  }
+  // For btn-icon in btn-lg
+  &.btn-lg{
+    &.btn-icon{
+      padding: 1rem;
+    }
+  }
+
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    outline: none;
+    box-shadow: none !important;
+  }
+}
+
+/*   Button Group  */
+/*----------------*/
+.btn-group:not(.dropdown){
+  > .btn{
+    border: 1px solid $border-color;
+    &:not(:last-child){
+      border-right-width: 0;
+    }
+    &:active,&.active,&:hover,&:focus{
+      background-color: $primary;
+      color: $white;
+      border-color: $primary;
+    }
+  }
+}

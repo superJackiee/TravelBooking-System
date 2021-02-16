@@ -1,0 +1,256 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../core/variables/components-variables";
+
+/* Form Wizard css  */
+/*-----------------*/
+.wizard{
+  // Common style 
+  .steps{
+    .current-info{
+      /* default current steps information hide */
+      display: none;
+    }
+    ul{
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+      margin: 0;
+      padding: 0;
+      li{
+        display: table-cell;
+        text-align: center;
+        position: relative;
+        a{
+          text-transform: uppercase;
+					position: relative;
+					padding-top: 3.46rem;
+					margin-top: 1.33rem;
+					margin-bottom: 1.33rem;
+          display: block;
+          .step {
+            /* Default step */
+            background-color: $white;
+            position: absolute;
+            top: 0.86rem;
+            left: 50%;
+            z-index: 1;
+            width: 1.33rem;
+            height: 1.33rem;
+            border-radius: 50%;
+            i{
+              /* icon inside step */
+              position: relative;
+              left: -2px;
+              top: -1px;
+              font-size: 1.6rem;
+            }
+            +.fonticon-wrap{
+              /*wizard Icon upon step icon */
+              position: absolute;
+              top:-50px;
+              left: 15px;
+              right: 0px;
+            }
+          }
+        }
+        &::before,
+        &::after{
+          /* wizard horizontal line */
+          content: '';
+					position: absolute;
+          top: 2.86rem;
+          width: 50%;
+          height: 3px;
+        }
+        &::before{
+          left: 0;
+        }
+        &:after{
+          right: 0;
+        }
+        &:last-child{
+          &:after{
+            content: none;
+          }
+        }
+        &.current{
+          a{
+            /* current step */
+            color: $primary ;
+            cursor: default;
+          }
+          &::before{
+            background-color: $primary;
+          }
+          &:after {
+            background-color: darken($body-bg, 5%);
+          }
+          ~li{
+            a{
+              color: $gray-200;
+            }
+            &:before {
+              background-color: darken($body-bg, 5%);
+            }
+            &:after {
+              background-color: darken($body-bg, 5%);
+            }
+
+          }
+        }
+        &.disabled{
+          a{
+            /* disabled step */
+            cursor: default;
+            .step{
+              border: 3px solid;
+            }
+          }
+        }
+        &.done{
+          a{
+            /* done step */
+            color: $success;
+          }
+          &::after,
+          &::before{
+            background-color: $success;
+          }
+        }
+        &.error{
+          a{
+            /* error for form wizard validation */
+            color: $danger;
+            .step{
+              color: $danger;
+            }
+          }
+        }
+      }
+    }
+  }
+  .content{
+    /* form wizard content */
+    padding: 0;
+    margin: 0;
+    .title{
+      display: none;
+    }
+  }
+
+  // form wizard pagination
+  .actions{
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li{
+        float: left;
+        &.disabled{
+          display: none;
+        }
+        +li{
+          margin-left: 0.66rem;
+          float: right;
+        }
+      }
+    }
+  }
+
+  // Vertical wizard style 
+  &.vertical{
+    .steps{
+      /* steps for vertical */
+      float: left;
+      width: 30%;
+      ul{
+        li{
+          margin: 0 .5rem;
+          display: block;
+          a{
+            display: flex;
+            text-align: left;
+            margin: 0 0.5rem;
+            padding: 1rem;
+            border-radius: $border-radius;
+            i{
+              font-size: 2.4rem;
+              +span{
+                font-family: $font-family-monospace;
+                color: $headings-color;
+              }
+            }
+            .number{
+              /* step indicator number */
+              display: none;
+            }
+          }
+          &.current{
+            background:$hover-color;
+            border-radius: $border-radius;
+          }
+          &::before,
+          &::after{
+            content: none;
+          }
+        }
+      }
+     }
+     .content{
+      /* content inside vertical */
+      float: left;
+      width: 70%;
+      border-left: 1px solid $border-color;
+      .body{
+        padding: 2.5%;
+      }
+    }
+    .actions{
+      /* action inside vertical */
+      text-align: right;
+      ul{
+        display: inline-block;
+      }
+    }
+  }
+}
+/* vertical wizard section becomes 100% on small screen */
+@include media-breakpoint-down(sm){
+  .wizard{
+    &.vertical{
+      .steps{
+        width: 100%;
+      }
+      .content{
+        width: 100%;
+        border-left: none;
+      }
+    }
+  }
+}
+/* specific media query for below screen to hide subtitle */
+@include media-breakpoint-only(md) {
+  .wizard{
+    &.vertical{
+      .steps{
+        ul{
+          li{
+            a{
+              small{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

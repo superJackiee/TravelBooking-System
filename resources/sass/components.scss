@@ -1,0 +1,91 @@
+// ================================================================================================
+//  File Name: components.sCSS
+//  Description: Common components file to includ all theme specific custom components.
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/*------------------------------------------------------------------
+
+[Table of contents]
+- Layout CSS
+- Responsive Layout CSS
+- Sidebar
+- Footer CSS
+- Main Menu 
+- Content Helpers
+-   Display
+-   Borders
+-   Box Shadow
+-   Width
+-   Height
+-   Line Height
+-   Transformations
+- Image
+- Bullets
+- Avatar CSS
+- Search
+- Apex Chart CSS
+- Bootstrap Social
+- Demo CSS
+- Customizer CSS
+- Chips CSS
+- Divider CSS
+- Error CSS
+- widget chat
+- Timeline
+- CSS Breakpoints
+- Basic Input CSS
+- Font Sizing
+- Select2 CSS
+- Datatables CSS
+- Pick A Date CSS
+- Daterange CSS
+-------------------------------------------------------------------*/
+
+// Core variables and mixins
+@import "bootstrap/functions";
+@import "bootstrap/mixins";
+@import "bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "core/variables/variables";
+@import "bootstrap/variables";
+
+// Overrides user variable
+@import "core/variables/components-variables";
+@import "core/mixins/transitions";
+
+// layouts
+@import "core/layouts/content";
+@import "core/layouts/sidebar";
+@import "core/layouts/footer";
+// menu
+@import "core/menu/navigation";
+
+// Components
+// ----------
+@import "components/helper";
+@import "components/avatar";
+@import "components/search";
+@import "components/chart";
+@import "components/bootstrap-social";
+@import "components/demo"; // Plugins demo, remove in real project
+@import "components/customizer"; // Customizer demo, remove in real project
+@import "components/chips";
+@import "components/divider";
+@import "components/error";
+@import "components/widget-chat";
+@import "components/widget-timeline";
+
+// Plugins
+// -------
+@import "plugins/ui/breakpoints";
+@import "plugins/forms/tags/basic-input";
+@import "plugins/forms/select2/select2";
+@import "plugins/tables/datatables";
+@import "plugins/pickers/pick-a-date";
+@import "plugins/pickers/daterange";

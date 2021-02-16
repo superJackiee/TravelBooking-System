@@ -1,0 +1,517 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* Todo Application css */
+/*----------------------*/
+.todo-application{
+  // Content area wrapper border
+  .content-area-wrapper{
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    //   Sidebar menu area starts
+    .sidebar{
+      position: inherit;
+      .todo-sidebar{
+      /* todo-sidebar menu */
+        width: $menu-expanded-width;
+        height: calc(100vh - 9rem);
+        border-top-left-radius:$border-radius;
+        border-bottom-left-radius:$border-radius;
+        // Close Icon
+        .sidebar-close-icon{
+          position: absolute;
+          right: .25rem;
+          top: .25rem;
+          cursor: pointer;
+          font-size: 1.25rem;
+          visibility: hidden;
+        }
+        .todo-app-menu{
+          width: 100%;
+          padding: .5rem 0;
+          // sidebar menu add task
+          .add-task{
+            padding: 1px 1.5rem;
+            margin-bottom: 0.25rem;
+            // add task button
+            .add-task-btn {
+              box-shadow:  0 2px 4px 0 rgba($primary, 0.4);
+            }
+          }
+          // sidebar menu list
+          .sidebar-menu-list{
+            padding: 0 1.5rem;
+            position: relative;
+            height: calc(100% - 5.4rem);
+            .filter-label{
+              font-family: $font-family-monospace;
+              letter-spacing: 1px;
+              color:$todo-filters-color;
+            }
+            .list-group {
+              .list-group-item {
+                padding: 5px 0;
+                color: $body_color;
+                font-weight: 500;
+                background-color: transparent;
+                &.active {
+                  color: $primary;
+                  &::before{
+                    content: "";
+                    position: absolute;
+                    width: 2px;
+                    height: 30px;
+                    background-color: $primary;
+                    left: -23px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .todo-new-task-sidebar{
+    /* todo-new-task-sidebar */
+      height: calc(100vh - 9rem);
+      width: 400px;
+      border-radius: $border-radius;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      background-color: $white;
+      position: fixed;
+      transform: translateX(120%);
+      transition: all .3s ease-in-out;
+      z-index: 8;
+      right: 4.6rem;
+      bottom: 4rem;
+      // Compose new task
+      &.show{
+        transform: translateX(9%) ;
+      }
+      // specific card and card body style for new task sidebar
+      .card{
+        .card-header{
+          .task-header{
+            height: 32px;
+          }
+          .mark-complete-btn{
+            i{
+              top: 0;
+            }
+          }
+          // dropdown arrow hide
+          .dropdown-toggle{
+            color: $gray-600;
+            &::after{
+              display: none;
+            }
+          }
+        }
+        .card-body{
+          padding: 1.53rem;
+        }
+      }
+
+      // close icon
+      .close-icon{
+        position: absolute;
+        top: 13px;
+        right:5px;
+        outline: none;
+        i{
+          font-size: 1.75rem;
+        }
+      }
+      // Textarea for new task heading specific style
+      .task-title{
+          font-family:$font-family-monospace;
+          font-size: 1.1rem;
+      }
+      .assigned{
+        .avatar{
+          .avatar-content{
+            height: 38px;
+            width: 38px;
+          }
+        }
+        // select2 for user select
+        .select-box{
+          .select2-container{
+            .select2-selection--single{
+              border-color: transparent;
+              &:hover{
+                border: 1px solid $border-color !important;
+                outline: none;
+              }
+              &:focus{
+                outline: none;
+                border-color: $border-color !important;
+                box-shadow: none !important;
+              }
+              // dropdown arrow
+              .select2-selection__arrow{
+                display: none;
+              }
+              .select2-selection__rendered{
+                padding: 0;
+              }
+            }
+            &.select2-container--open{
+              .select2-selection--single{
+                border-color: $border-color !important;
+              }
+            }
+          }
+        }
+        // date picker
+        .date-picker{
+          .pickadate{
+            border-color: transparent;
+            &:hover{
+              border-color: $border-color;
+            }
+            &:focus{
+              border-color: $border-color;
+              box-shadow: none;
+            }
+          }
+        }
+       }
+      //  select2 for add badge in new task
+       .select2-assign-label{
+          +.select2-container{
+            &.select2-container--disabled{
+              .select2-selection--multiple{
+                background-color: transparent;
+                border: none;
+                box-shadow: none !important;
+              }
+            }
+            .select2-selection__rendered{
+              .select2-selection__choice{
+                border-radius: 2rem;
+                span{
+                  color: $gray-600 !important;
+                }
+                // select2 options specific style
+                &[title="Frontend"]{
+                  background-color: #E2ECFF !important;
+                  color: $primary !important;
+                }
+                &[title="Backend"]{
+                  background-color: #D2FFE8 !important;
+                  color: $success !important;
+                }
+                &[title="Issue"]{
+                  background-color: #FFDEDE !important;
+                  color: $danger !important;
+                }
+                &[title="Design"]{
+                  background-color: #FFEED9 !important;
+                  color: $warning !important;
+                }
+                &[title="Wireframe"]{
+                  background-color: #CCF5F8 !important;
+                  color: $info !important;
+                }
+              }
+            }
+          }
+        }
+        // quill editor for comment and description
+      .snow-container{
+        position: relative;
+        .ql-container{
+          &.ql-snow{
+            border: none;
+            .ql-tooltip{
+              left:0 !important;
+            }
+          }
+        }
+        .ql-toolbar{
+          border: none;
+        }
+        // Comment btn
+        .comment-btn{
+          box-shadow:  0 2px 4px 0 rgba($primary, 0.6);
+        }
+      }
+      // Description Editor
+      .ql-editor{
+        min-height: 70px;
+        padding-left: 0;
+        padding-right: 0;
+        &.ql-blank::before{
+          left: 0;
+        }
+      }
+      // Comment Editor
+      .comment-editor{
+        .ql-editor{
+          min-height: 120px;
+        }
+      }
+     }
+
+    // Right content area starts
+    .content-right {
+      .content-wrapper{
+        padding: 0;
+      }
+      .todo-app-list-wrapper{
+        border-left: 1px solid $border-color;
+        .todo-fixed-search{
+        /* Todo Fixed search */
+          padding: .51rem .1rem;
+          border-bottom: 1px solid $border-color;
+          background-color: $white;
+          border-top-right-radius: $border-radius;
+          input{
+            border:0;
+            font-family: $font-family-sans-serif;
+            &:focus {
+              box-shadow: none;
+            }
+          }
+          // list sorting
+          .todo-sort{
+            .sorting{
+              padding: .2rem 1.2rem;
+              border: 1px solid $border-color;
+            }
+          }
+        }
+        .sidebar-toggle{
+        /* Sidebar toggle icon */
+          cursor: pointer;
+          margin: 0.5rem 0.99rem;
+          line-height: 1;
+          i{
+            font-size: 1.75rem;
+          }
+        }
+        .todo-app-list{
+          .todo-task-list{
+            position: relative;
+             height: calc(100vh - 12.7rem);
+             // task list wrapper
+            .todo-task-list-wrapper {
+              margin: 0;
+              background-color: $white;
+              transition: all .3s ease-in-out;
+              .todo-item{
+                &.no-animation{
+                  animation: none !important;
+                }
+              /* todo item */
+                cursor: pointer;
+                animation: fadeIn 0.5s linear;
+                animation-fill-mode: both;
+                position: relative;
+                padding: .4rem 1rem .4rem .5rem;
+                border-top: 1px solid $border-color;
+                // task list area for heading and checkbox
+                .todo-title-area{
+                  width: 70%;
+                  i{
+                    font-size: 1.5rem;
+                  }
+                }
+                // badge text
+                .badge{
+                  text-transform: uppercase;
+                }
+                // task list dragabble handle
+                .handle{
+                  transition: all .3s ease-out;
+                  opacity: 0;
+                  margin-right: .2rem;
+                  cursor: move;
+                }
+                &:hover {
+                  box-shadow: 0 0 10px 0 rgba(58, 70, 93, 0.25);
+                  border-color: transparent;
+                  .handle{
+                    opacity: 1;
+                    transition: all .35s ease 0s!important;
+                  }
+                }
+                // task title
+                .todo-title{
+                  font-family: $font-family-monospace;
+                  color: $gray-600;
+                }
+                // task favorite and delete
+                .todo-item-favorite,
+                .todo-item-delete{
+                  color:$todo-star-color;
+                }
+              }
+              // Set delay per List Item
+              @for $i from 1 through 5000 {
+                li:nth-child(#{$i}) {
+                  animation-delay: .1s * $i;
+                }
+              }
+            }
+            // completed class use when task is completed
+            .completed {
+              .todo-title{
+                text-decoration: line-through;
+              }
+            }
+          }
+        }
+        .no-results{
+        /* When searching for item and no-results found */
+          display: none;
+          padding: 1.5rem;
+          text-align: center;
+          &.show{
+            display: block;
+          }
+        }
+      }
+      .app-content-overlay{
+      /* Content area overlay */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        display: block;
+        z-index: 4;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s ease;
+        &.show{
+          visibility: visible;
+          transition: all .3s ease;
+          opacity: 1;
+          background-color: rgba($black, 0.2);
+          border-radius: .25rem;
+        }
+      }
+    }
+  }
+}
+
+// Keyframe animation
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+  75% {
+    opacity: 0.5;
+    top: 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  // sidebar menu position set on extra small screen
+  .todo-application {
+    .content-area-wrapper{
+      // new task sidebar style for exra small screen
+      .todo-new-task-sidebar{
+        width: auto;
+        right:calc(100% - 88%) !important;
+        &.show{
+          transform: translateX(11%) translateY(1px);
+        }
+        .assigned{
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  // sidebar menu close btn show on small screen
+  .todo-application{
+    .todo-sidebar{
+      .sidebar-close-icon{
+        visibility: visible !important;
+      }
+    }
+    .todo-new-task-sidebar{
+      right: 4.5rem !important;
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  .todo-application{
+    .app-content{
+      .sidebar-left{
+        .todo-sidebar{
+        /* sidebar menu position on medium screeen */
+          transform: translateX(-130%);
+          transition: all .3s ease-in-out;
+          background-color: $white;
+          left: 0;
+          position: absolute;
+          z-index: 5;
+        }
+        &.show{
+          .todo-sidebar{
+            transform: translateX(0);
+          }
+        }
+      }
+      // right side content style
+      .content-right{
+        width: 100%;
+        .todo-app-list-wrapper{
+          border-left: 0;
+        }
+      }
+      .todo-app-list{
+        .todo-task-list{
+          position: relative;
+           height: calc(100vh - 12.9rem) !important;
+        }
+      }
+    }
+  }
+}
+@media screen and(max-width:675px){
+  .todo-task-list-wrapper{
+    // task list content wrap in specific screen
+    .todo-item{
+      .todo-title-wrapper{
+        flex-wrap: wrap;
+        .todo-title-area{
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 349.98px){
+  .todo-application{
+    .content-area-wrapper{
+      .sidebar{
+        // sidebar menu width on specific screen
+        .todo-sidebar{
+          width: 230px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,224 @@
+//  ================================================================================================
+//  File Name: components-variables.scss
+//  Description: Custom theme specific variables and other content variations
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Frest HTML Admin Template
+//  Version: 1.0
+//  Author: PIXINVENT
+//  Author URL: http://www.themeforest.net/user/pixinvent
+//  ================================================================================================
+
+//  ================================================================================================
+//  WARNING: PLEASE DO NOT CHANGE THIS VARIABLE FILE.
+//  THIS FILE WILL GET OVERWRITTEN WITH EACH Frest HTML TEMPLATE RELEASE.
+//  TIP:
+//  We suggest you to use this (assets/scss/variables/components-variables.scss) file for overriding app variables.
+//  ================================================================================================
+
+// Bootstrap  Variables
+@import "../../bootstrap/variables";
+@import "variables";
+// @import "../../bootstrap/mixins/gradients";
+// @import "../mixins/hex2rgb";
+// @import "../colors/palette";
+
+// General
+$base-font-size: 15px;
+$body-direction: ltr; // Default ltr, change it to rtl for Right To Left support.
+$content-padding: 2.2rem;
+$font-weight-600: 600;
+$menu-light-sub-bg: #fafbfb;
+$menu-light-active-bg: #e2ecff;
+// $menu-light-active-bg: map-get($primary,'light');
+$font-size-xs: 0.75rem;
+$font-size-xl: ($font-size-base + 0.5);
+$line-height-xl: 1.7;
+$line-height-xs: 1.5;
+$input-padding-y-xl: 0.5rem !default;
+$input-padding-x-xl: 0.5rem !default;
+$input-padding-y-xs: 0.2rem !default;
+$input-padding-x-xs: 0.275rem !default;
+$border-radius-xl: 0.35rem !default;
+$border-radius-xs: 0.12rem !default;
+$input-border-radius-xl: $border-radius-xl;
+$input-border-radius-xs: $border-radius-xs;
+$input-height-xl: (($font-size-xl * $line-height-xl) + ($input-padding-y-xl * 2)) !default;
+$input-height-xs: (($font-size-xs * $line-height-xs) + ($input-padding-y-xs * 2)) !default;
+$input-height-sm: (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2)) !default;
+
+// Colors
+$nav-component-border-color: #ddd;
+$chip-bg-color: #f0f0f0;
+$chip-avatar-bg: #c3c3c3;
+$avatar-bg: $chip-avatar-bg;
+$swiper-bg: #f2f4f4;
+$hover-color: #f2f4f4;
+
+// Buttons
+$btn-border-radius-square: 0;
+$btn-border-radius: 0.42rem;
+$gradient-button-bs: 0 8px 25px -8px #aaa;
+$btn-color: #e1e1e1;
+
+// Navbar
+$navbar-height: 5rem;
+
+// Timeline
+$timeline-border: #dfe3e7;
+$timeline-content-bg: #fafbfb;
+
+// Touchspin
+$touchspin-border-color: #f2f4f4;
+
+// Toast
+$toast-header-border-color: $border-color;
+
+// Dropdown
+$dropdown-btn-padding-x: 1.5rem;
+$dropdown-btn-padding-y: 0.85rem;
+$dropdown-btn-split-padding-x: 1rem;
+
+// Treeview Badge
+$badge-light-primary: #e2ecff;
+
+// Breadcrumb
+$breadcrumb-divider-color: #e0e0e0;
+
+// Tabs Component
+$tabs-border-color: #ededed;
+$nav-link-bg-color: #f2f4f4;
+
+// Main Menu
+// ---------
+
+//Main Menu Dark
+$menu-dark-color: #8a99b5;
+$menu-dark-bg-color: #1a233a;
+$menu-dark-active-bg: #343b53;
+$menu-padding: 10px 30px;
+$menu-second-level-padding: 10px 9px;
+$menu-third-level-padding: 10px 20px;
+
+// Vertical Menu
+$menu-expanded-width: 260px;
+$menu-collapsed-width: 78px;
+
+// Sidebar
+$sidebar-width: 260px;
+$chat-sidebar-width: 290px;
+
+// Avatar
+$avatar-size: 32px;
+$avatar-status-size: 11px;
+$avatar-status-size-lg: 17px;
+$avatar-size-xl: 70px;
+$avatar-size-lg: 50px;
+$avatar-size-sm: 24px;
+
+// Progress
+$progress-size: 0.6rem;
+$progress-size-sm: 0.4rem;
+$progress-bar-bg: $body-bg;
+
+// Spinner
+$spinner-width-lg: 3rem;
+$spinner-height-lg: 3rem;
+
+// List Group Item
+$list-group-icon-bg: #fafbfb;
+
+// App Chat
+$app-chat-message-bg: #fafbfb;
+
+// Collapse
+$collapse-header-border: $border-color;
+
+//  Bootstrap Checkbox
+$checkbox-disabled-bg: #b3c0ce;
+
+// Blank Page Bg Color
+$blank-bg-color: #eff2f7;
+
+// Pick-A-Date Arrow Border Color
+$pick-a-date-arrow-color: #ddd;
+
+// Select2 Plugin
+$select-arrow-border: #b3c0ce;
+
+// Data Tables Bg Color
+$datatable-bg-color: #f8f8f8;
+
+// Chips
+$chip-min-height: 1.857rem;
+$chip-min-width: $chip-min-height;
+$chip-font-size: 0.8rem;
+$chip-border-radius: 1.428rem;
+$chip-avatar-min-height: 1.714rem;
+$chip-avatar-min-width: $chip-avatar-min-height;
+$chip-closeable-min-height: 24px;
+$chip-closeable-min-width: 24px;
+
+//  Tables
+$table-th-font-size: 1rem;
+$table-icon-bg: #f2f4f4;
+$table-striped-hover: #e7edf3;
+
+//  Switch
+$switch-bg-color: #e7edf3;
+$switch-indicator-color: $white;
+$switch-md-size: 4rem;
+$switch-lg-size: 5.5rem;
+
+//  Kanban App
+$kanban-board-bg: #e7edf3;
+$kanban-sidebar-label: #bac0c7;
+
+// Dark Layout
+// -----------
+$theme-dark-bg: #1a233a;
+$theme-dark-menu-active-bg: #343b53;
+$theme-dark-card-color: #272e48;
+$theme-dark-active-bg-color: #162239;
+$theme-dark-heading-color: #bdd1f8;
+$theme-dark-text-color: #8a99b5;
+$theme-dark-table-bg: #212744;
+$theme-dark-chat-bg-color: #18223c;
+$theme-dark-border-color: #464d5c;
+$theme-dark-progress-bar-bg: #464d5c;
+$theme-dark-pagination-bg: #464d5c;
+$theme-dark-hover-bg: #304256;
+$theme-dark-select-bg: #353d52;
+$theme-dark-switch-color: #d6e3fb;
+$theme-dark-checkbox-color: #5a627d;
+$theme-dark-switch-bg: #353d52;
+$theme-dark-scroll-bg: #eeeeee0d;
+$theme-dark-scroll-bar-bg: #d1d7de;
+$theme-dark-shadow-gradient: #1a233af0;
+$theme-dark-shadow-gradient2: #1a233abf;
+$theme-dark-shadow-gradient3: #2c303c00;
+$theme-dark-card-shadow: #0b1a33;
+$theme-dark-email-hover: #101010;
+$theme-dark-footer-shadow: #192a46;
+
+// Chat Application
+$chat-badge-bg: #f3f8fd;
+
+// Email Application
+$selected-email-bg: #e7edf3;
+$detail-mail-bg: #fafbfb;
+$favorite-star-color: #c7cfd6;
+
+// File-Manager Application
+$file-label-color: #bac0c7;
+$folder-icon-color: #b3c0ce;
+$file-progress-bg: #e7edf3;
+$timeline-content-color: #304156;
+$left-sidebar-bg: #fafbfb;
+
+// Todo Application
+$todo-filters-color: #bac0c7;
+$todo-star-color: #c7cfd6;
+
+// Invoice Application
+$invoice-actions-bg: #fafbfb;
+$invoice-value-color: #304156;

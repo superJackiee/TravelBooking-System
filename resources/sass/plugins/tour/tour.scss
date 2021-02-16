@@ -1,0 +1,107 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../core/variables/components-variables";
+
+/* Tour css */
+/*----------*/
+.tippy-popper{
+  border: none;
+  border-radius: .5rem;
+  filter: drop-shadow(-8px 12px 18px rgba(25, 42, 70, 0.13));
+  .tippy-tooltip{
+    /* tour tippy tooltip width */
+    width: auto !important;
+    .tippy-arrow{
+      /* border-color tippy arrow */
+      border-bottom-color: $primary;
+      transform: scale(1.5) !important;
+    }
+
+    .tippy-content{
+      .shepherd-content{
+        // content bg, padding, radius
+        background-color: $primary;
+        padding: 1.3rem 1rem;
+        border-radius: .5rem;
+
+        // header padding
+        .shepherd-header{
+          padding: 0;
+        }
+        // text color, font-size
+        .shepherd-text{
+          color: $white;
+          font-size: 1rem;
+        }
+
+        // footer margin, padding, bg-color, border
+        .shepherd-footer{
+          padding: 0;
+          .shepherd-buttons{
+            display: flex;
+           justify-content: center;
+            li{
+              margin: 0;
+            }
+
+            .shepherd-button {
+              /* Tour content buttons */
+              background-color : #E2ECFF !important;
+              border-radius: 6px;
+              padding: .7rem 2rem;
+              color: $primary;
+              margin: 0 5px;
+              &:hover{
+                background-color: rgba($white, .1);
+              }
+          }
+
+          }
+        }
+      }
+      [data-shepherd-step-id="step-4"]{
+        .shepherd-footer{
+          .shepherd-buttons{
+            /* to align footer buttons at center */
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*  For border-color on placement */
+.tippy-popper{
+  &[x-placement="top"]{
+    .tippy-arrow{
+      border-color: transparent;
+      border-top-color: $primary;
+    }
+  }
+  &[x-placement="bottom"]{
+    .tippy-arrow{
+      border-color: transparent;
+      border-bottom-color: $primary;
+    }
+  }
+  &[x-placement="right"]{
+    .tippy-arrow{
+      border-color: transparent;
+      border-right-color: $primary;
+    }
+  }
+  &[x-placement="left"]{
+    .tippy-arrow{
+      border-color: transparent;
+      border-left-color: $primary;
+    }
+  }
+}

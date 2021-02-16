@@ -1,0 +1,161 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../bootstrap/variables";
+
+// Overrides user variable
+@import "../core/variables/components-variables";
+
+/* dashboard ecommerce page css */
+/*------------------------------*/
+// widget Earnings swiper
+.widget-earnings-scroll{
+  position: relative;
+  .widget-earnings-width{
+    min-width: 390px;
+  }
+}
+
+// widget Earnings swiper
+#widget-earnings {
+  .widget-earnings-swiper {
+    &.swiper-container {
+      .swiper-slide {
+        /* widget swiper slide */
+        font-weight: $headings-font-weight;
+        background-color: $swiper-bg;
+        height: auto;
+        width: auto !important;
+        color: $text-muted;
+        cursor: pointer;
+        .swiper-text{
+          font-family: $font-family-monospace;
+        }
+        &.swiper-slide-active {
+        /* swiper slide active */
+          color: $white;
+          background-color: $primary !important;
+          box-shadow: 0 3px 6px 0 rgba($primary, 0.5) !important;
+        }
+      }
+    }
+  }
+  .wrapper-content {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+// Marketing Campaigns
+.marketing-campaigns{
+  .table-responsive{
+    position: relative;
+  }
+  .table-marketing-campaigns{
+    thead{
+      tr{
+        border-top: 1px solid $border-color !important;
+        border-bottom: 1px solid $border-color !important;
+      }
+    }
+  }
+}
+
+// Sales History
+.sales-item-name{
+  p{
+    line-height: 1;
+  }
+}
+// dashboard lates update scroll bar z-index
+.dashboard-latest-update{
+  .list-group{
+    .list-group-item{
+      &:hover{
+        z-index: 0;
+      };
+    }
+  }
+  .show > .btn-outline-secondary.dropdown-toggle{
+    color: $white !important;
+  }
+}
+// order summary - border right display none
+@media screen and (max-width: 768px){
+  .order-summary{
+    border-right: 0 !important;
+  }
+}
+// fixed height for latest update card
+@media screen and (min-width: 1281px){
+  .dashboard-latest-update{
+    .card-body{
+      height: 280px;
+      position: relative;
+    }
+  }
+}
+
+// change columns width below 1280px
+@media screen and (max-width: 1280px) and (min-width: 768px){
+  .dashboard-users, .dashboard-order-summary, .dashboard-marketing-campaign{
+    max-width: 100% !important;
+    flex: auto;
+  }
+  .dashboard-users-success, .dashboard-users-danger{
+    max-width: 30% !important;
+    flex: auto;
+    width: auto !important;
+  }
+  .dashboard-revenue-growth{
+    max-width: 60% !important;
+    flex: auto;
+    width: auto !important;
+  }
+  .dashboard-greetings, .dashboard-visit, .dashboard-latest-update, .dashboard-earning-swiper{
+    max-width: 50% !important;
+    flex: auto;
+  }
+}
+// change columns width below 1280px
+@media screen and (max-width: 1280px){
+  .dashboard-greetings{
+    .card-content{
+      margin-top: 1rem;
+    }
+  }
+  .dashboard-users{
+    .dashboard-users-danger,
+    .dashboard-users-success{
+      .card-body{
+          padding-top: 1.7rem !important;
+          padding-bottom: 1.7rem !important;
+      }
+    }
+  }
+}
+// Greeting text font size change on below mentioned screen
+@media (max-width: 1360px) and (min-width:1280px) {
+  .dashboard-greetings{
+    .card{
+      .greeting-text{
+        font-size: 1.53rem;
+      }
+    }
+  }
+}
+
+// margin change on below screeen
+@media screen and (max-width: 1700px) and (min-width: 1354px){
+  .dashboard-greetings{
+    .card-content{
+      margin-top: 2.8rem;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+// =========================================================================================
+// 	File Name: chart.scss
+// 	Description: Chart css.
+// 	----------------------------------------------------------------------------------------
+// 	Item Name: Frest HTML Admin Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ==========================================================================================
+
+/* Apex chart css */
+/* -------------- */
+
+.apexcharts-canvas {
+  .apexcharts-tooltip {
+    color: $body-color !important;
+    &.dark {
+      color: $white !important;
+    }
+  }
+  .apexcharts-toolbar {
+    .apexcharts-menu {
+      .apexcharts-menu-item {
+        color: $body-color;
+      }
+    }
+  }
+}
+
+// apex charts tooltip
+.apexcharts-xaxistooltip {
+  color: $body-color !important;
+}
+
+// client-retention Chart
+#client-retention-chart {
+  .apexcharts-canvas {
+    .apexcharts-legend {
+      left: -14px !important;
+    }
+  }
+}

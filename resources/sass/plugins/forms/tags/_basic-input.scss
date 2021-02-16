@@ -1,0 +1,75 @@
+// ================================================================================================
+//     File Name: basic-input.scss
+//     Description: basic input.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+/* Basic Input Css */
+/* -------------- */
+
+.form-control-position {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  color: rgba($black, 0.4);
+}
+
+/* Input Icon Positioning */
+.position-relative {
+  .form-control {
+    padding-right: $input-height;
+    &.form-control-lg {
+      ~ .form-control-position {
+        top: 6px;
+      }
+    }
+    &.form-control-sm {
+      ~ .form-control-position {
+        top: -4px;
+      }
+    }
+  }
+}
+
+/* Input Icon Left */
+.has-icon-left {
+  .form-control {
+    padding-right: $input-btn-padding-x;
+    padding-left: 2.5rem;
+  }
+  .form-control-position {
+    right: auto;
+    i {
+      position: relative;
+      left: 2px;
+      top: 1px;
+      color: rgba($black, 0.4);
+    }
+  }
+}
+
+/* Font Sizing */
+.font-size-large {
+  font-size: $font-size-lg;
+}
+
+.font-size-base {
+  font-size: $font-size-base;
+}
+
+.font-size-small {
+  font-size: $font-size-sm;
+}
+
+.font-size-xsmall {
+  font-size: $font-size-xs;
+}

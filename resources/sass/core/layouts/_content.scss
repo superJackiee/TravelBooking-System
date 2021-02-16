@@ -1,0 +1,332 @@
+// ================================================================================================
+//     File Name: content.scss
+//     Description: Page content level SCSS for different screen size, layout and device.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Frest HTML Admin Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Authuseror URL: http://www.themeforest.net//pixinvent
+// ================================================================================================
+
+/* Template Css */
+/* ----------- */
+html {
+    font-size: $base-font-size;
+    height: 100%;
+    letter-spacing: 0.01rem;
+    body {
+        height: 100%;
+        background-color: $body-bg;
+        direction: $body-direction;
+    }
+    .content {
+        padding: 0;
+        position: relative;
+        transition: 300ms ease all;
+        backface-visibility: hidden;
+        min-height: calc(100% - 3.5rem);
+        margin-left: $menu-expanded-width;
+        &.app-content {
+            overflow: hidden;
+            &.show-overlay {
+                .content-overlay {
+                    z-index: 10;
+                    opacity: 1;
+                    ~ .header-navbar-shadow {
+                        background: linear-gradient(
+                            180deg,
+                            rgba(44, 48, 60, 0.9) 44%,
+                            rgba(44, 48, 60, 0.43) 73%,
+                            rgba(44, 48, 60, 0)
+                        );
+                    }
+                }
+            }
+            .content-overlay {
+                position: fixed;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba($black, 0.5);
+                cursor: pointer;
+                transition: all 0.7s;
+                z-index: -1;
+            }
+            .content-area-wrapper {
+                height: calc(100% - #{$navbar-height});
+                margin: calc(#{$navbar-height}) #{$content-padding} 0;
+                display: flex;
+                position: relative;
+                .content-wrapper {
+                    margin-top: 0;
+                    height: calc(100vh - 9rem);
+                }
+            }
+        }
+        .content-wrapper {
+            padding: calc(#{$content-padding} - 0.4rem) #{$content-padding} 0;
+            margin-top: 0;
+            .content-header-title {
+                color: $gray-600;
+                margin-right: $spacer;
+                border-right: 1px solid $text-muted;
+            }
+            .breadcrumb-wrapper {
+                // Breadcrumb
+                .breadcrumb {
+                    .breadcrumb-item {
+                        a,
+                        a i {
+                            color: $text-muted;
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                    .breadcrumb-item + .breadcrumb-item {
+                        padding-left: 9px;
+                        &:before {
+                            color: $text-muted;
+                            padding-right: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Navbar Hidden
+    .navbar-hidden {
+        .app-content {
+            .content-wrapper {
+                padding: 2.2rem 2.2rem 0;
+                margin-top: 0;
+            }
+            .content-area-wrapper {
+                padding: 0;
+                margin-top: 2.5rem;
+            }
+        }
+    }
+
+    // Static Navbar
+    .navbar-static {
+        .app-content {
+            .navbar-container {
+                padding-left: 2.2rem;
+                padding-right: 1.2rem;
+            }
+            .content-wrapper {
+                padding: 1.8rem 2.2rem 0;
+                margin-top: 3px;
+            }
+            .content-area-wrapper {
+                margin-top: 1rem;
+            }
+        }
+        .content {
+            min-height: calc(100% - 12.5rem);
+        }
+    }
+
+    // Sticky Navbar
+    .navbar-sticky {
+        .app-content {
+            .navbar-container {
+                padding-left: 1.8rem;
+                padding-right: 1rem;
+                .search-input {
+                    .search-list {
+                        &.show {
+                            width: 98%;
+                            left: 1%;
+                        }
+                    }
+                }
+            }
+            .content-wrapper {
+                padding: 1.8rem 2.2rem 0;
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    // Navbar Search Width
+    .navbar-static,
+    .navbar-sticky {
+        .navbar-container {
+            padding-left: 1.8rem;
+            padding-right: 1rem;
+            .search-input {
+                .search-list {
+                    &.show {
+                        width: 98%;
+                        left: 1%;
+                    }
+                }
+            }
+        }
+    }
+
+    // Fixed Footer Layout
+    .fixed-footer {
+        .content {
+            &.app-content {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    // Paragraph Line Height
+    p {
+        line-height: 1.5rem;
+    }
+    // Authentication Pages
+    .bg-full-screen-image {
+        background: url("../images/pages/auth-bg.jpg") no-repeat center center;
+        background-size: cover;
+    }
+
+    // Blank Page
+    .blank-page {
+        .content {
+            margin-left: 0;
+            &.app-content {
+                overflow: overlay;
+                overflow-x: hidden;
+            }
+        }
+        // Blank Page Content-Wrapper
+        .content-wrapper {
+            padding: 0 !important;
+            margin-top: 0 !important;
+            // Content Center Horizontally And Vertically
+            .flexbox-container {
+                display: flex;
+                align-items: center;
+                height: 100vh;
+                justify-content: center;
+            }
+        }
+    }
+    // Left Margin For 1 Column Layout
+    [data-col="1-column"] {
+        .content,
+        .footer {
+            margin-left: 0px !important;
+        }
+        .header-navbar.fixed-top {
+            left: 0 !important;
+        }
+    }
+    .horizontal-layout.vertical-overlay-menu {
+        .navbar-container.main-menu-content {
+            padding: 0;
+        }
+    }
+    .pace {
+        .pace-progress {
+            background: $primary;
+        }
+    }
+}
+
+.app-content.center-layout {
+    overflow: hidden;
+}
+// Livicons Sizing
+i,
+span {
+    &.livicon-evo {
+        display: inline-block;
+    }
+}
+
+/* Responsive Layout Css */
+/* --------------------- */
+
+@include media-breakpoint-up(lg) {
+    body {
+        // Normal Sidebar
+        .content-right {
+            width: calc(100% - #{$sidebar-width});
+            float: right;
+        }
+        .content-left {
+            width: calc(100% - #{$sidebar-width});
+            float: left;
+        }
+        // Detached Sidebar
+        .content-detached {
+            width: 100%;
+            &.content-right {
+                float: right;
+                margin-left: -$sidebar-width;
+                .content-body {
+                    margin-left: calc(#{$sidebar-width} + #{$content-padding});
+                }
+            }
+            &.content-left {
+                float: left;
+                margin-right: -$sidebar-width;
+                .content-body {
+                    margin-right: calc(#{$sidebar-width} + #{$content-padding});
+                }
+            }
+        }
+    }
+    .sidebar-right.sidebar-sticky {
+        float: right !important;
+        margin-left: -$sidebar-width;
+        width: $sidebar-width !important;
+        margin-top: $navbar-height + 1;
+    }
+    //Left Sticky Sidebar
+    [data-col="content-left-sidebar"] {
+        .sticky-wrapper {
+            float: left;
+        }
+    }
+}
+
+.truncate {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+@include media-breakpoint-down(xs) {
+    html body .content .content-wrapper {
+        padding: calc(#{$content-padding} - 0.4rem)
+            calc(#{$content-padding} - 1rem) 0;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .navbar-static,
+    .navbar-sticky {
+        .app-content {
+            .header-navbar {
+                .navbar-container {
+                    padding-left: 1rem;
+                    padding-right: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+// Ie Specific Css
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    html.full-screen {
+        width: 100%;
+        .content.app-content {
+            height: 100%;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+    }
+}

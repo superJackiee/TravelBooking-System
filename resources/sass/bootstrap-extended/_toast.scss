@@ -1,0 +1,121 @@
+/*   Toasts css   */
+/*---------------*/
+.toast-bs-container{
+  /* toast container css */
+  z-index: 1040;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 498px;
+
+  .toast-position{
+    position: relative;
+    top: 6.2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+/* toast placement css */
+.toast-placement{
+  .toast{
+    position: fixed;
+    top:6.2rem;
+    z-index: 1040;
+  }
+}
+  /* default toast css */
+  .toast {
+    display: none;
+    margin-top: .75rem;
+    // default toast header
+    .toast-header{
+      // icon on header
+      i{
+        font-size: 1.4rem;
+        margin-right: .6rem;
+      }
+      // toast-title for toast heading
+      .toast-title{
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+      // close btn
+      .close{
+        padding: 0.1rem .25rem;
+        border-radius: 1.5rem;
+        margin-left: 1rem;
+        opacity: 1;
+        color: $gray-600;
+        background-color: $hover-color;
+        &:focus,&:active{
+          outline: none;
+        }
+        // close icon
+        i{
+          font-size: 1.2rem;
+          margin: 0;
+        }
+      }
+    }
+    .toast-body {
+      padding:$toast-padding-y $toast-padding-x; // apply to both vertical and horizontal
+    }
+    // if toast-light class with toaster
+    &.toast-light{
+      .toast-header{
+          background-color: transparent;
+          border-bottom: 1px solid $toast-header-border-color;
+        span{
+          color:$gray-600;
+        }
+        i{
+          color: $gray-600;
+        }
+        small{
+          color:$gray-200;
+        }
+      }
+    }
+    &.toast-translucent{
+      /* translucent toast opacity and display */
+    opacity: .95;
+    display: block;
+  }
+}
+
+/* IE Specific CSS */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+  .toast-bs-container {
+    position: fixed !important;
+    top: 0;
+    right: 1%;
+    width:auto;
+    left: auto;
+  }
+}
+_:-ms-lang(x),
+.toast-bs-container {
+  position: fixed !important;
+  top: 0;
+  right: 1%;
+  width:auto;
+  left: auto;
+}
+// toast position change from below specific screen
+@media screen and(max-width:430px){
+  .toast-bs-container .toast-position{
+    right: 0;
+  }
+  .toast-position{
+    .toast{
+      max-width: 23.33rem;
+      &.show{
+        position: relative;
+        right: 12px;
+      }
+    }
+  }
+}

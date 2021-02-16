@@ -1,0 +1,43 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../bootstrap/variables";
+
+// Overrides user variable
+@import "../../core/variables/components-variables";
+
+/* toast css */
+/* ----------*/
+
+/* toast container opacity */
+#toast-container > div {
+    opacity: 0.9;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+    filter: alpha(opacity=90);
+    max-width: none;
+}
+
+/* toast container hover shadow */
+.toast-container > div {
+    box-shadow: none !important;
+}
+
+/* toast background colors starts */
+.toast {
+    background-color: $primary;
+}
+.toast-success {
+    background-color: $success;
+}
+.toast-error {
+    background-color: $danger;
+}
+.toast-info {
+    background-color: $info;
+}
+.toast-warning {
+    background-color: $warning;
+}

@@ -1,0 +1,49 @@
+/*  Badges css */
+/*------------*/
+.badge {
+  color: $white;
+  font-family: $font-family-monospace;
+  background-color: $primary;
+  text-transform: uppercase;
+
+  &.badge-up {
+    /* badge-up - To align badge over any element */
+    position: absolute;
+    top: -0.8rem;
+    right: -0.5rem;
+  }
+
+  // badge-round
+  &.badge-round{
+    padding: .28rem 0.4rem;
+  }
+  // badge-icon
+  &.badge-icon{
+    padding: .25rem 0.4rem;
+  }
+}
+
+/*    Badge Circle    */
+/*-------------------*/
+.badge-circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  background-color: $primary;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+
+  // badge circle small 
+  &.badge-circle-sm{
+    height: 24px;
+    width: 24px;
+  }
+
+  // badge circle large 
+  &.badge-circle-lg{
+    height: 48px;
+    width: 48px;
+  }
+}
